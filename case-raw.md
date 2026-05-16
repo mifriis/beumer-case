@@ -1,24 +1,22 @@
 # Secure and Reliable Logistics
 
-Beumer has delivered logistics across the world for decades. Be it airports, packaging or airfreight.
+Beumer has delivered logistics systems across the world for decades, spanning airports, packaging and airfreight. The software powering those systems was built to solve the problems of its time, and it did.
 
-The setup so far has relied on software fit for purpose at time of purchase
+The problem is that software does not age the way physical infrastructure does. A conveyor belt does not become a security liability by sitting still. Software does. Every day a system goes unpatched is a day the gap between what it knows and what the world knows grows a little wider.
 
-Software afterwards forked by the customer to match onsite requirements for logging, interoperability, hosting and features.
+The model of selling software once and letting customers adapt it to their needs made sense when vulnerabilities were rare and isolated events. That world no longer exists.
 
-This has lead to a difficult split from the main trunk of code causing updates, upgrades and patches to become very expensive. Inscentivising not upgrading and instead building security moats around software.
+## Vulnerabilities Are Now a Recurring Cost
 
-But increasingly so, we are seeing vulnerbilities as a predictable, recurring event. One where an unpatched system is just a bad firewall configuration or moat vulnerbility away from being entirely open to hostile agents.
+Vulnerabilities are not incidents anymore. They are a weekly occurrence across every software ecosystem, from operating systems to open source libraries to development toolchains. The question is no longer whether vulnerabilities will affect our software. It is whether we have a process fast enough to stay ahead of them.
 
-## Vulnerbilities is the new normal
+Failing to patch does not hold the line. It compounds. A system unpatched for a week carries last week's risk plus this week's. Unpatched for a year, a system can carry upwards of 500 known vulnerabilities, each a potential vector into the next. The longer the delay, the less the gap looks like a missed update and the more it looks like an open door.
 
-Every week new vulnerbilities are discovered, patched or exploited. Failing to patch doesnt just put software into a vulnerable state, it begins to compound vulnerbility interest. Last weeks unpatched vulnerbilities just get compunded with 10 new next week. It's entirely likely that a system unpatched for a year can have 500 vulnerbilities or more, with further impact as years are added on top.
+The fork model makes this worse. When customers modify and maintain their own version of our software, patching requires a code merge, not a deployment. That is expensive, slow and easy to defer. Deferred often enough, it stops happening at all, and the security moat that replaced it becomes the only thing standing between the site and a motivated attacker.
+
+That is not a sustainable position for Beumer or for our customers.
 
 <Insert Illustration of compounding vulnerbilities>
-
-Since 2024 all software sold by or on the European market are required to be supported, maintained and with a cyber security strategy for keeping the software resilient. This is captured in the EU Cyber Resilliance act of 2024:
-* 2026 - Notification of Conformity starts and manufacturers must report severe incidents and active exploits in their software
-* 2027 - Full application of the act sets in and new software must include an active cyber security stategy for 5 years after acquisition
 
 ## Anatomy of software security risks
 
@@ -137,11 +135,11 @@ With a strong API version practice from us we can ensure no changes we make or t
 
 ### Software Development Kit
 
-Instead of just relying on HTTP and events for interface, we can also expose our softwares interfaces as an SDK. This lets the sites build their software on the same principles as with the APIs where they are decoupled from our itnernal functionality.
+The third option is to expose our software's interfaces as an SDK, allowing sites to build their own applications on top of our domain logic without forking our codebase.
 
-This is the most difficult practice of the three though for us. This shifts our software from being a self-contained container, to being a library in someone elses.
+This is the most capable integration option and the most consequential one. When a site builds on our SDK, our software becomes a library inside their container. They own Layer 1 and take on partial ownership of Layer 2. We become a dependency in their stack, one that happens to pull in dependencies of its own.
 
-It shifts the responsbility towards the customer where they are now entirely responsible for Layer 1 (operating system) and partially on dependencies. We become just another dependecy in their software, that just so happens to pull in dependencies of their own.
+The SDK is a last resort, reached for only when the sidecar and API have proven insufficient for a customer's genuine integration needs. We will develop our understanding of what an SDK would look like as we learn from early customers, but we will not invest in building it until the demand is proven.
 
 <new container with the SDK inside it>
 
@@ -183,3 +181,20 @@ The new architecture carries explicit constraints. These are not preferences but
 * SAST findings: open static analysis findings by severity, tracked over time and not just at point of scan
 
 These are not vanity metrics. They are the early warning system for the compounding vulnerability problem described at the start of this document. A rising base image age or a growing backlog of SAST findings is the same signal as an unpatched system it's just caught earlier.
+
+## The Regulatory Clock is Running
+
+Since 2024 the EU Cyber Resilience Act has fundamentally changed what it means to sell software on the European market. For the first time, manufacturers are legally accountable for the security posture of their software after it leaves their hands.
+
+The act rolls out in two stages:
+
+* 2026: Manufacturers must notify authorities of severe incidents and actively exploited vulnerabilities in their software
+* 2027: Full application. Any new software sold must ship with an active cybersecurity strategy covering the five years following acquisition
+
+This is not a compliance checkbox. It is a structural change to the support relationship between Beumer and every site running our software.
+
+Under the current model, a customer who forked three years ago and never merged an update is running software we have no visibility into and no control over. If that software contains an actively exploited vulnerability in 2027, the question of who is responsible becomes a legal one, not just an operational one.
+
+The fork model does not just make updates expensive. It makes compliance structurally impossible.
+
+A subscription model with weekly delivery, maintained by us, with fitness functions we can report against, is not just better engineering. It is the only model that gives us a defensible answer when a regulator or a customer asks: what is the current security posture of your software, and how do you know?
