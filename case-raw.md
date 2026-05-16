@@ -57,14 +57,19 @@ It's not possible for a company to investigate and understand all their dependen
 
 We want to monitor how far our domain code is drifting from the latest versions of our dependencies and make dependency updates a staple part of every iteration.
 
-### Layer 3 - Source code analysis
+### Layer 3 - Source Code
 
-The final layer is where our skills, training and expertice plays a big role. Software developed inhouse and highly reflective of the domain it's built for.
+The first two layers are largely solved by tooling and process. This one requires skill. The code our developers write every day to solve domain specific logistics challenges is the layer no scanner fully understands and no base image update can fix.
 
-This is code where SQL vulnerbilities and the other OWASP top 10s tend to sneak in when teams drop their guard or are under pressure.
+This is where the OWASP Top 10 lives in practice. SQL injection, broken authentication, insecure direct object references, insufficient input validation. These are not exotic attack vectors. They are the most reliably exploited vulnerabilities in production software, year after year, because they emerge from the pressure and complexity of daily development work rather than from a dependency someone else maintained.
 
-* Static Application Security Tools like CodeQL, SonarQube and such help scan and understand our newly produced code before it's merged to main. These help flag problematic areas and highlight where best practices aren't met
-* Code Reviews by coworkers remain the last bulwark. Companies with a strong review culture and estalished practices are among the most successful. Very strong research shows quality of merged code plummetes when changed lines in a pullrequest starts growing beyond 300 lines with 1000+ essentially being a rubberstamp
+Two practices form the foundation here:
+
+**Static Application Security Testin**g tools like CodeQL and SonarQube analyse code before it merges to main. They flag dangerous patterns, highlight where best practices are not met, and create a documented record of what was checked and when. They do not catch everything, but they catch the repeatable mistakes reliably and at low cost.
+
+**Code review remains the final check**. Research consistently shows that review effectiveness degrades sharply as pull request size grows. Beyond 300 changed lines reviewers lose the thread. Beyond 1000 lines a review is largely a formality. Keeping pull requests small and review culture strong is not a process preference, it is a security control.
+
+Neither practice works in isolation. A codebase with strong SAST coverage and weak review culture will still ship logic flaws that no static tool can detect. A strong review culture without SAST will miss the systematic, pattern-based vulnerabilities that tooling catches in seconds. Together they form a layer of defence that is proportionate to the risks our own code introduces.
 
 ### Three layers
 
