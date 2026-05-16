@@ -90,13 +90,31 @@ A multipronged effort is needed, and with a clear design philosophy where it is 
 
 ### Sidecars
 
-A typical usecase of different sites is to have monitoring, logging and surveillance tools that encompass more systems than the one our software is part of. 
+Every site operates within a broader infrastructure that predates our software and will outlast it. Monitoring platforms, SIEM systems, log aggregators, identity providers — these are not ours to control or replace, and attempting to do so would make our software impossible to adopt.
 
-By supporting container sidecars we can ensure logs and data is available to a broad variety of tools. 
+The sidecar pattern solves this without touching the main container. A sidecar is a secondary container that runs alongside ours in the same pod, sharing its network and storage context. It intercepts, enriches or forwards data — logs, metrics, auth tokens — without the main container knowing or caring what happens to them downstream.
 
-For companies that dont have their own sidecar, we can deliver one with the software.
+This keeps the main container generic, unmodified, and firmly on the weekly delivery cadence. Customization lives in the sidecar. The main codebase stays on the trunk.
 
 <expand illustration with a sidecar>
+
+What sidecars can handle:
+
+* Log forwarding and enrichment — the main container writes to stdout, the sidecar handles routing to whatever the site uses: Splunk, Elastic, a proprietary SIEM
+* Auth enforcement — token validation against the site's identity provider, so the main container never handles AuthN logic directly
+* Metrics and observability export — Prometheus, Datadog, or site-specific tooling without instrumenting the app itself
+* Secret injection — credentials and certificates delivered at runtime without baking them into the image
+* Audit logging — request and response capture for compliance purposes, applied uniformly without relying on application teams to implement it
+
+The sidecar is deliberately narrow. It exposes configuration, not code; which log destination, which identity provider, which secrets to mount. Sites fill in values; they do not modify behaviour.
+
+For sites without the capability to build their own, we deliver a default sidecar alongside the main container. For sites with mature platform teams, the contract is thin enough that they can bring their own, provided it honours the same interface.
+
+In a Kubernetes environment the sidecar can be auto-injected by the platform operator, meaning the site customer receives it without building or maintaining anything. It simply arrives.
+
+It is critical and non-negotiable that the sidecar remains the customization path for operational concerns. Not a fork, not a patch to the main container, not a workaround through internal functions. The sidecar is the interface. Everything behind it stays ours.
+
+<zoom into sidecar with thin config surface>
 
 ### APIs
 
@@ -127,25 +145,41 @@ It shifts the responsbility towards the customer where they are now entirely res
 
 <new container with the SDK inside it>
 
-### Outcome
+## Implementation Strategy
 
-no longer forks, start with sidecar and API
-be curious about SDK, but initial priority last
+The shift away from forks is not a big bang migration. It is a deliberate, friction-first process of learning what our customers actually need before we build more than necessary.
 
+The first milestone is narrow by design: get both customers running on the weekly delivery cadence with sidecar-only customization. No API, no SDK. We are not avoiding those options. We are refusing to build them before we know they are needed. Where does friction appear? Is it a technical integration problem or is it site administrators encountering a new operating model for the first time? Those require very different responses.
+
+We start with two customers. Not two average ones but rather the easiest customer we can find, and the most difficult. The easiest validates that the pipeline and sidecar model works end to end in a real environment. The most difficult tells us where the model breaks and what we genuinely need to build next.
+
+If the sidecar proves insufficient and API integration is genuinely required, we pivot and build it. If neither customer needs the API, we find the next most difficult customer and ask the same question again. We follow the path of most resistance, not the path of most features.
+
+The SDK remains a future option we watch with curiosity and deploy with reluctance. It fundamentally shifts operational responsibility toward the customer and makes us a dependency in their stack rather than an isolated container we fully control. It solves real problems but creates new ones, and we will not reach for it until the simpler interfaces have been exhausted.
 
 ## Support Model
 
-price model change - from flat purchase to monthly subscription
-end2end delivery on a weekly basis - even with no new features just a fresh base image and dependency lock
+The commercial model changes to match the delivery model. A flat purchase price made sense when software was delivered once and maintained by the customer. It does not make sense when we are delivering a fresh, patched container every week regardless of whether new features shipped.
+
+The new model is a monthly subscription. What customers are buying is not a feature release but rather it is a continuously maintained, secure, supported software system. Every week brings a new base image, updated dependency locks, and a pipeline that has passed the full suite of security checks. Some weeks that includes new functionality. Every week it includes a current security posture.
+
+This also changes the support relationship. We are no longer handing off a binary and stepping back. We are in a continuous delivery relationship with every active customer, which means incidents, patches and critical CVEs are our problem to resolve on the weekly cadence, not theirs to absorb and manage alone.
 
 ## Architectural Constraints
 
-architectural constraints like not being dependant on software on their side
-kubernetes or similar orchstration platform as a requirement to run our software
-fitness functions established to meassure how good we are at the new architecture:
-* dependency age
-* base image age
-* concurrent Pull Requests open
-* pull request age
-* median pull request length
-* SAST findings
+The new architecture carries explicit constraints. These are not preferences but rather they are load-bearing decisions that make the security and delivery model function.
+
+**Platform requirement**: Kubernetes or an equivalent container orchestration platform is a prerequisite to running our software. This enables sidecar injection, rolling deployments, and the operational model the weekly cadence depends on. Sites that cannot meet this requirement cannot participate in the new model until they can.
+
+**No external dependencies at runtime:** Our containers must not depend on software, services or infrastructure on the customer side to function. Configuration is injected. Integrations are outbound through our API boundary. We do not take runtime dependencies on what the site happens to have installed.
+
+**Fitness functions:** The health of the architecture is measured continuously, not audited annually. The following metrics are tracked across all active deliveries:
+
+* Dependency age: how far declared dependencies have drifted from current patched versions
+* Base image age: time since the deployed image was last rebuilt from a fresh base
+* Concurrent open pull requests: a proxy for integration debt accumulating in the pipeline
+* Pull request age: how long changes are sitting unmerged and undeployed
+* Median pull request size: a leading indicator of review quality. Beyond 300 changed lines, review effectiveness drops sharply
+* SAST findings: open static analysis findings by severity, tracked over time and not just at point of scan
+
+These are not vanity metrics. They are the early warning system for the compounding vulnerability problem described at the start of this document. A rising base image age or a growing backlog of SAST findings is the same signal as an unpatched system it's just caught earlier.
