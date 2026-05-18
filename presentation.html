@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure and Reliable Logistics — BEUMER Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #003D7A;
+  --blue:   #0088CC;
+  --orange: #FF6600;
+  --white:  #FFFFFF;
+  --teal:   #003D5C;
+  --gray:   #F5F5F5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+/* ── SLIDE SHELL ── */
+.slide {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── LOGO ── */
+.logo {
+  position: absolute;
+  top: 28px;
+  left: 48px;
+  height: 36px;
+  z-index: 10;
+}
+.logo-white { filter: brightness(0) invert(1); }
+
+/* ── SHARED TEXT STYLES ── */
+.eyebrow {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.display-title {
+  font-family: 'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  line-height: 1.0;
+}
+.section-title {
+  font-family: 'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+/* ── LEFT ACCENT BAR ── */
+.accent-bar {
+  position: absolute;
+  left: 0; top: 0;
+  width: 8px; height: 100%;
+}
+
+/* ── TWO-COLUMN SPLIT ── */
+.col-left {
+  position: absolute;
+  left: 0; top: 0;
+  width: 420px; height: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 48px;
+}
+.col-right {
+  position: absolute;
+  left: 420px; top: 0;
+  width: 860px; height: 720px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 64px;
+}
+
+/* ── LEFT PANEL ── */
+.panel-left {
+  position: absolute;
+  left: 0; top: 0;
+  width: 400px; height: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 48px;
+}
+.panel-right {
+  position: absolute;
+  left: 400px; top: 0;
+  width: 880px; height: 720px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 64px;
+}
+
+/* ── ILLUSTRATION PLACEHOLDER ── */
+.illus {
+  border: 2px dashed #bbb;
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px;
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--gray);
+  border-top: 5px solid var(--blue);
+  padding: 24px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card.c-navy  { border-top-color: var(--navy); }
+.card.c-blue  { border-top-color: var(--blue); }
+.card.c-grey  { border-top-color: #aaa; }
+.card-badge {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.card-body {
+  font-size: 14px;
+  color: var(--navy);
+  line-height: 1.55;
+  opacity: 0.85;
+  flex: 1;
+}
+
+/* ── METRIC CARDS ── */
+.metric-card {
+  background: var(--gray);
+  border-top: 4px solid var(--blue);
+  padding: 16px 18px;
+}
+.metric-card.m-red    { border-top-color: #CC2200; }
+.metric-card.m-amber  { border-top-color: var(--orange); }
+.metric-card.m-blue   { border-top-color: var(--blue); }
+.metric-name {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.metric-desc {
+  font-size: 13px;
+  color: var(--navy);
+  opacity: 0.8;
+  line-height: 1.45;
+}
+
+/* ── RULED POINT LIST ── */
+.ruled-item {
+  border-left: 3px solid var(--navy);
+  padding-left: 14px;
+  margin-bottom: 14px;
+}
+.ruled-item h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.ruled-item p {
+  font-size: 14px;
+  color: var(--navy);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* ── NUMBERED ITEM ── */
+.num-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.num-badge {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--white);
+  margin-top: 2px;
+}
+.num-item h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.num-item p {
+  font-size: 14px;
+  color: var(--navy);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+@media print {
+  body { background: white; padding: 0; gap: 0; }
+  .slide { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 1 — TITLE HERO (dark)
+     Layout: Title Hero
+     Orange: YES (1 of 3)
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--teal);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div style="position:absolute;top:0;left:0;right:0;height:5px;background:var(--orange);"></div>
+
+  <div style="position:absolute;top:104px;left:80px;">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.55);">Software Architecture Strategy</span>
+  </div>
+
+  <div style="position:absolute;top:136px;left:80px;max-width:740px;">
+    <h1 class="display-title" style="font-size:72px;color:var(--white);letter-spacing:-0.01em;">
+      Software Doesn't Stay<br>Safe by Standing Still
+    </h1>
+  </div>
+
+  <div style="position:absolute;top:370px;left:80px;max-width:640px;">
+    <p style="font-size:19px;color:rgba(255,255,255,0.72);line-height:1.65;">
+      A strategy for continuous security, compliant delivery,<br>and replacing the fork model across the BEUMER product suite.
+    </p>
+  </div>
+
+  <div style="position:absolute;bottom:72px;left:80px;">
+    <div style="background:var(--orange);color:var(--white);font-weight:700;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;padding:11px 26px;display:inline-block;">
+      EU CRA Deadline: 2027
+    </div>
+  </div>
+
+  <div class="illus" style="position:absolute;right:80px;top:136px;width:390px;height:360px;border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);">
+    Illustration:<br>BEUMER airport site —<br>conveyor belts, baggage handling
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Good morning. I want to start with a single observation: software does not age the way physical infrastructure does.
+  A conveyor belt does not become a security liability by sitting still. Software does. Every day a system goes unpatched,
+  the gap between what it knows about the threat landscape and what the world knows grows a little wider.
+
+  For over two decades BEUMER has delivered world-class logistics software across airports, packaging facilities and air
+  freight operations. That software was built to solve the problems of its time. It did that well. But the model that
+  came with it — sell it, fork it, let the customer adapt it — was built for a world where security vulnerabilities were
+  occasional events. That world no longer exists. Today I will explain what that means technically, what we need to do
+  about it, and what it means for the people in this organisation.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 2 — STAT HERO (dark)
+     Layout: Stat / Quote Hero
+     Orange: YES (2 of 3)
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--teal);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div style="position:absolute;top:100px;left:80px;">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);">The cost of inaction</span>
+  </div>
+
+  <div style="position:absolute;top:136px;left:80px;">
+    <span class="display-title" style="font-size:128px;color:var(--orange);line-height:1.0;">500+</span>
+  </div>
+
+  <div style="position:absolute;top:310px;left:80px;max-width:580px;">
+    <p style="font-size:22px;color:var(--white);line-height:1.6;">
+      Known vulnerabilities in a system left unpatched for one year. Each one a potential vector into the next.
+    </p>
+  </div>
+
+  <div style="position:absolute;top:430px;left:80px;max-width:620px;">
+    <p style="font-size:16px;color:rgba(255,255,255,0.62);line-height:1.7;">
+      Failing to patch does not hold the line. It compounds. The longer the delay,
+      the less the gap looks like a missed update and the more it looks like an open door.
+    </p>
+  </div>
+
+  <div class="illus" style="position:absolute;right:80px;top:100px;width:420px;height:510px;border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);">
+    Illustration:<br>Compounding vulnerability curve —<br>exponential line rising over 12 months
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Let me give you one number that puts the problem in concrete terms. A system left unpatched for a single year
+  accumulates upwards of 500 known, documented, indexed vulnerabilities with working exploits available.
+  Each one can serve as a stepping stone into the next.
+
+  This is not a dramatic estimate. It is the reality of what happens when you deploy software and then stop updating it.
+  Security research continues. Dependency vulnerabilities are disclosed. OS patches ship. All of that happens whether
+  we participate or not. The fork model makes this worse because patching is not a deployment — it is a code merge.
+  That takes weeks or months. It is expensive and easy to defer. Deferred often enough, it stops happening at all.
+  This is the problem we are solving today.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 3 — THE FORK PROBLEM
+     Layout: Two-Column Split
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="col-left" style="background:var(--navy);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">The root cause</span>
+    <h2 class="section-title" style="font-size:46px;color:var(--white);margin-bottom:22px;">
+      The Fork Model Is the Problem
+    </h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.72);line-height:1.65;">
+      When every customer runs their own modified version, patching requires a code merge — not a deployment.
+      Expensive, slow, and easy to defer indefinitely.
+    </p>
+  </div>
+
+  <div class="col-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:24px;display:block;">What this means in practice</span>
+
+    <div class="num-item">
+      <div class="num-badge" style="background:var(--navy);">1</div>
+      <div>
+        <h4>Patch = Merge</h4>
+        <p>Every security update requires reconciling customer-specific changes with the trunk. For complex sites with years of accumulated modifications, this runs to thousands of hours.</p>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-badge" style="background:var(--navy);">2</div>
+      <div>
+        <h4>Deferred Becomes Never</h4>
+        <p>Expensive enough to defer once, the merge stops happening. The site runs on an increasingly exposed version of software we no longer control or have visibility into.</p>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-badge" style="background:var(--navy);">3</div>
+      <div>
+        <h4>CRA Makes It Illegal</h4>
+        <p>From 2027 we are legally accountable for the security posture of software five years post-delivery. The fork model makes that compliance structurally impossible.</p>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The fork model worked well for two decades because customisability was the thing that let us win tenders competitors
+  would not touch. That advantage is real and we are not discarding it.
+
+  But the model has a structural flaw. When a customer runs their own modified version of our software, a security
+  patch is not a deployment. It is a code merge. Every customer-specific change must be reconciled with whatever we
+  changed on the trunk. For complex sites with years of accumulated modifications, that can take thousands of hours.
+  Work that expensive is easy to defer. Deferred often enough, it stops entirely.
+
+  From 2027 that is not just an operational problem. The EU Cyber Resilience Act makes manufacturers accountable for
+  the security posture of their software five years after delivery. The fork model does not give us a defensible answer
+  to that question. So we change the model.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 4 — THREE LAYERS OVERVIEW
+     Layout: Grid Cards
+     Orange: NO (card accent only, not headline)
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div style="position:absolute;top:72px;left:80px;">
+    <span class="eyebrow" style="color:var(--blue);">Securing the pipeline</span>
+  </div>
+  <div style="position:absolute;top:98px;left:80px;right:80px;">
+    <h2 class="section-title" style="font-size:52px;color:var(--navy);margin-bottom:6px;">Three Layers. All Three Matter.</h2>
+    <p style="font-size:15px;color:var(--navy);opacity:0.65;max-width:680px;line-height:1.5;">
+      A small vulnerability in application code can open a path to a severe OS exploit. No layer can be treated as lower priority.
+    </p>
+  </div>
+
+  <div style="position:absolute;top:240px;left:80px;right:80px;bottom:48px;display:flex;gap:24px;">
+    <div class="card c-navy">
+      <span class="card-badge" style="color:var(--navy);">Layer 1</span>
+      <div class="card-title">Operating System</div>
+      <p class="card-body">The base image everything runs on. Minimise installed tooling, use distroless builds, rebuild weekly. Scan continuously with Twistlock or Wiz.</p>
+      <div class="illus" style="width:100%;height:120px;margin-top:16px;border-radius:3px;">Illustration: minimal container stack — distroless base layer</div>
+    </div>
+    <div class="card c-blue">
+      <span class="card-badge" style="color:var(--blue);">Layer 2</span>
+      <div class="card-title">Dependencies</div>
+      <p class="card-body">Third-party packages we rely on but did not write. Trusted mirrors, dependency locks, Dependabot for automated update PRs, Blackduck for scanning.</p>
+      <div class="illus" style="width:100%;height:120px;margin-top:16px;border-radius:3px;">Illustration: dependency graph / package tree</div>
+    </div>
+    <div class="card" style="border-top-color:#CC4400;">
+      <span class="card-badge" style="color:#CC4400;">Layer 3</span>
+      <div class="card-title">Source Code</div>
+      <p class="card-body">The code our developers write daily. SAST with CodeQL or SonarQube. Small pull requests. Strong review culture. The OWASP Top 10 lives here.</p>
+      <div class="illus" style="width:100%;height:120px;margin-top:16px;border-radius:3px;">Illustration: SAST scan output in a pull request</div>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Software security risk exists across three distinct layers and all three need to be addressed independently.
+  None of them can substitute for the others, and a weakness in any one creates a path into the next.
+
+  Layer 1 is the operating system — the base image the container is built on. Controls: minimise what is in the image,
+  separate build and runtime images, rebuild on a weekly cadence, scan running images continuously.
+
+  Layer 2 is dependencies — the third-party packages and libraries our code depends on. Supply chain attacks and
+  package takeovers are now regular events across NPM, PyPI, NuGet and Maven. Controls: trusted mirrors, version locks
+  at build time, automated update tooling, SCA scanning.
+
+  Layer 3 is source code — what our developers write. This is where the OWASP Top 10 lives. SQL injection, broken
+  authentication, insecure direct object references. Controls are SAST tooling combined with a genuine review culture
+  built around small pull requests. Above 300 changed lines, review quality drops sharply. That is a security control,
+  not a process preference.
+
+  I will spend a moment on each layer.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 5 — LAYER 1: OPERATING SYSTEM
+     Layout: Left Panel
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="panel-left" style="background:var(--navy);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">Layer 1</span>
+    <h2 class="section-title" style="font-size:52px;color:var(--white);margin-bottom:18px;">Operating System</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.68);line-height:1.65;">
+      Minimize. Build separately.<br>Deploy regularly. Scan continuously.
+    </p>
+  </div>
+
+  <div class="panel-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:22px;display:block;">Controls</span>
+
+    <div class="ruled-item">
+      <h4>Distroless Base Images</h4>
+      <p>Strip images to bare essentials — no package manager, no shell, no SSH. Providers like Chainguard deliver pre-hardened minimal images that eliminate whole classes of exploit.</p>
+    </div>
+    <div class="ruled-item">
+      <h4>Multi-Stage Builds</h4>
+      <p>Build toolchain stays in the build container. Only the compiled artefact moves to the runtime image. Build tools never ship to production.</p>
+    </div>
+    <div class="ruled-item">
+      <h4>Weekly Rebuild Cadence</h4>
+      <p>Images rebuilt from a fresh patched base every week, regardless of feature changes. Base image age is a tracked fitness metric — slippage is visible immediately.</p>
+    </div>
+    <div class="ruled-item" style="margin-bottom:0;">
+      <h4>Runtime Scanning</h4>
+      <p>Twistlock or Wiz scans images in active environments. Alerts when a running image exceeds an acceptable vulnerability threshold or image age.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  For a modern software enterprise the OS is not something installed on a server. It is the base image the container
+  is built on and deployed from. And base images are not equal. A standard Linux base image ships with apt-get, curl,
+  SSH — tools a malicious actor can use to install software, call back to an external server, or open a shell.
+
+  The fix is to minimise. Distroless or hardened minimal base images contain only what the runtime application needs.
+  Nothing else. Companies like Chainguard have built a business on providing these.
+
+  Multi-stage builds ensure that the tools you need to compile and test the software never make it into the final
+  runtime image. The build container has everything. The production container has almost nothing.
+
+  And then we rebuild. Every week. Whether or not new features shipped. The base image age metric is what tells
+  us when that cadence is slipping before it becomes a problem.
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 6 — LAYER 2: DEPENDENCIES
+     Layout: Two-Column Split
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="col-left" style="background:var(--blue);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">Layer 2</span>
+    <h2 class="section-title" style="font-size:50px;color:var(--white);margin-bottom:22px;">Dependencies</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;">
+      Code we rely on but did not write. Supply chain attacks across NPM, PyPI, NuGet and Maven are now a daily event.
+    </p>
+  </div>
+
+  <div class="col-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:22px;display:block;">Controls</span>
+
+    <div class="num-item">
+      <div class="num-badge" style="background:var(--blue);">1</div>
+      <div>
+        <h4>Trusted Artifactory Mirrors</h4>
+        <p>Only verified packages enter the build. Official packages from known vendors are trusted by default. Unknown or hobbyist packages are blocked at the pipeline boundary.</p>
+      </div>
+    </div>
+    <div class="num-item">
+      <div class="num-badge" style="background:var(--blue);">2</div>
+      <div>
+        <h4>Dependency Locks</h4>
+        <p>Exact versions locked at build time. If v1.2.3 shipped last week, v1.2.3 ships this week. No sliding version windows where anything in v1.x is acceptable.</p>
+      </div>
+    </div>
+    <div class="num-item">
+      <div class="num-badge" style="background:var(--blue);">3</div>
+      <div>
+        <h4>Dependabot Automation</h4>
+        <p>Automated pull requests for dependency updates. Pipeline tests must pass before merging. Reliable updates without manual tracking or crisis-mode upgrades.</p>
+      </div>
+    </div>
+    <div class="num-item" style="margin-bottom:0;">
+      <div class="num-badge" style="background:var(--blue);">4</div>
+      <div>
+        <h4>Blackduck / SCA Scanning</h4>
+        <p>Software composition analysis flags known vulnerabilities in the dependency tree on every pipeline run — not as a periodic audit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Layer 2 is the code we rely on but did not write. Every product depends on an ecosystem of third-party libraries —
+  authentication, cryptography, HTTP clients, serialisation. We use them because building everything from scratch is
+  neither productive nor more secure.
+
+  The risk is that we cannot audit all of them. Supply chain attacks — where malicious code is quietly inserted into
+  a previously trusted package — are now a regular occurrence. Log4Shell affected millions of systems because a widely
+  used logging library contained a critical flaw that had gone unnoticed.
+
+  Our four controls: trusted mirrors that filter what can even enter our builds; version locks so a build is
+  deterministic and no unexpected change sneaks in between runs; Dependabot so updates happen routinely rather than
+  in a crisis; and SCA scanning with Blackduck so we have visibility into what vulnerabilities are already inside our
+  dependency tree. The goal is to keep dependency drift small and visible.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 7 — LAYER 3: SOURCE CODE
+     Layout: Left Panel
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="panel-left" style="background:#004A2E;">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">Layer 3</span>
+    <h2 class="section-title" style="font-size:50px;color:var(--white);margin-bottom:18px;">Source Code</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.68);line-height:1.65;">
+      The layer no scanner fully understands and no base image update can fix. It requires skill.
+    </p>
+  </div>
+
+  <div class="panel-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:22px;display:block;">Controls</span>
+    <div style="display:flex;gap:36px;max-width:740px;margin-bottom:24px;">
+      <div style="flex:1;">
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:10px;">SAST</h3>
+        <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;margin-bottom:14px;">
+          CodeQL and SonarQube analyse code before it merges to main. They flag dangerous patterns, highlight where best practices are missed, and create a documented record. Catch the repeatable mistakes reliably and at low cost.
+        </p>
+        <div class="illus" style="width:100%;height:90px;border-radius:3px;">Illustration: SAST finding flagged in a pull request</div>
+      </div>
+      <div style="width:1px;background:#ddd;flex-shrink:0;"></div>
+      <div style="flex:1;">
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:10px;">Code Review</h3>
+        <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;margin-bottom:14px;">
+          Review effectiveness degrades sharply above 300 changed lines. Above 1,000 lines a review is a formality. Keeping pull requests small is not a process preference. It is a security control.
+        </p>
+        <div class="illus" style="width:100%;height:90px;border-radius:3px;">Illustration: PR size vs review quality — cliff at 300 lines</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #ddd;padding-top:16px;max-width:740px;">
+      <p style="font-size:13px;color:var(--navy);opacity:0.58;line-height:1.55;font-style:italic;">
+        Neither works alone. Strong SAST with weak review ships logic flaws. Strong review without SAST misses systematic pattern-based vulnerabilities. Together they form a proportionate defence.
+      </p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Layer 3 is the code our developers write every day. This is the layer no scanner fully understands and no base
+  image update can fix. It is also where the most reliably exploited vulnerabilities in production software live.
+  SQL injection, broken authentication, insecure direct object references. The OWASP Top 10. These appear year after
+  year not because developers are careless but because they emerge from the pressure and complexity of daily
+  development work.
+
+  Two practices form the foundation. SAST — tools like CodeQL and SonarQube — analyses code before it merges.
+  It catches the repeatable, pattern-based mistakes that a tool can recognise. Not everything. But a lot, reliably,
+  at low cost.
+
+  The second practice is code review, and there is specific research worth knowing here. Review quality degrades
+  sharply as pull request size grows. Above 300 changed lines reviewers start losing the thread. Above 1,000 lines
+  a review is largely a formality. Keeping PRs small is therefore not just good engineering hygiene. It is a
+  security control. You need both practices. Neither is sufficient alone.
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 8 — SECTION PIVOT
+     Layout: Title Hero (dark)
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--teal);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div style="position:absolute;top:0;left:0;right:0;height:5px;background:var(--blue);"></div>
+
+  <div style="position:absolute;top:104px;left:80px;">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);">The delivery problem</span>
+  </div>
+
+  <div style="position:absolute;top:144px;left:80px;max-width:860px;">
+    <h2 class="display-title" style="font-size:68px;color:var(--white);margin-bottom:36px;">
+      A Clean Container Is Worthless<br>If It Never Reaches Production
+    </h2>
+  </div>
+
+  <div style="position:absolute;top:400px;left:80px;max-width:680px;">
+    <p style="font-size:18px;color:rgba(255,255,255,0.72);line-height:1.7;">
+      The pipeline secures what we build. The integration model determines whether we can deliver it weekly to every customer — without forking, without merging, without stalling.
+    </p>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  We have covered how we secure what we build. Three layers, continuous scanning, a weekly cadence from a freshly
+  patched base image. But none of that matters if the software cannot reach the customer.
+
+  Under the current model, reaching the customer requires a code merge. That is the bottleneck that makes the weekly
+  cadence impossible. So the second half of this strategy is about replacing the fork model with an integration
+  architecture that allows us to meet customer needs without ever modifying the core container.
+
+  There are three tools for doing that. I'll walk through them in order of preference.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 9 — THREE INTEGRATION PATTERNS
+     Layout: Grid Cards
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div style="position:absolute;top:72px;left:80px;">
+    <span class="eyebrow" style="color:var(--blue);">Replacing the fork</span>
+  </div>
+  <div style="position:absolute;top:98px;left:80px;right:80px;">
+    <h2 class="section-title" style="font-size:50px;color:var(--navy);margin-bottom:6px;">Three Ways to Customise Without Forking</h2>
+    <p style="font-size:14px;color:var(--navy);opacity:0.62;line-height:1.5;">Reach for them in order. Build the next only when the previous proves insufficient.</p>
+  </div>
+
+  <div style="position:absolute;top:232px;left:80px;right:80px;bottom:48px;display:flex;gap:24px;">
+    <div class="card c-navy" style="background:var(--gray);">
+      <span class="card-badge" style="color:var(--navy);">Default</span>
+      <div class="card-title" style="font-size:30px;">Sidecar</div>
+      <p class="card-body">A secondary container alongside ours. Handles log routing, auth tokens, secrets, metrics — without touching the main container. The trunk stays on the weekly cadence.</p>
+      <p style="font-size:12px;color:var(--navy);opacity:0.5;font-style:italic;margin-top:12px;">Configuration, not code. Sites fill in values; they do not modify behaviour.</p>
+    </div>
+    <div class="card c-blue" style="background:var(--gray);">
+      <span class="card-badge" style="color:var(--blue);">When sidecar is insufficient</span>
+      <div class="card-title" style="font-size:30px;">API</div>
+      <p class="card-body">RESTful and event-driven interfaces at the software boundary. Sites build integrations on their side. Strong versioning ensures our weekly updates never break their code.</p>
+      <p style="font-size:12px;color:var(--navy);opacity:0.5;font-style:italic;margin-top:12px;">Their code stays theirs. Ours stays ours.</p>
+    </div>
+    <div class="card c-grey" style="background:var(--gray);">
+      <span class="card-badge" style="color:#888;">Last resort</span>
+      <div class="card-title" style="font-size:30px;color:#888;">SDK</div>
+      <p class="card-body" style="opacity:0.55;">Our domain logic exposed as a library inside their container. Sites take ownership of Layers 1 and 2. Not built until the need is proven by real customers.</p>
+      <p style="font-size:12px;color:var(--navy);opacity:0.4;font-style:italic;margin-top:12px;">Use with reluctance. Shifts operational responsibility to the customer.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Three integration patterns, ordered by preference. We start with the simplest and only move to the next when the
+  previous genuinely cannot solve the problem.
+
+  The sidecar is the default. It handles the operational concerns that vary by site — log routing, auth tokens,
+  secrets injection, metrics export — without touching the main container at all. The main container stays generic,
+  unmodified, and on the weekly delivery cadence.
+
+  The API is the second option. When a site needs deeper integration — triggering events, reading state, building
+  their own tooling on top of our domain logic — we expose that through a versioned API boundary. They build on
+  their side. We build on ours. Our updates do not break their integrations.
+
+  The SDK is the last resort and we will not invest in building it until the demand from real customers has been
+  proven. It makes us a dependency inside their container and shifts security responsibility toward them.
+  I will spend a moment on each.
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 10 — SIDECAR DETAIL
+     Layout: Full-Width Content
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div class="accent-bar" style="background:var(--navy);"></div>
+
+  <div style="position:absolute;top:80px;left:88px;right:80px;display:flex;gap:56px;">
+
+    <div style="flex:1;max-width:520px;">
+      <span class="eyebrow" style="color:var(--navy);margin-bottom:14px;display:block;">Default integration</span>
+      <h2 class="section-title" style="font-size:52px;color:var(--navy);margin-bottom:18px;">The Sidecar</h2>
+      <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:16px;">
+        A secondary container in the same Kubernetes pod. It intercepts, enriches and forwards data — logs, metrics, auth tokens — without the main container knowing or caring what happens downstream.
+      </p>
+      <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:20px;">
+        Customisation lives in the sidecar. The main codebase stays on the trunk and on the weekly cadence.
+      </p>
+      <div style="border-left:4px solid var(--navy);padding-left:14px;">
+        <p style="font-size:13px;color:var(--navy);opacity:0.65;line-height:1.6;font-style:italic;">
+          It is critical and non-negotiable that the sidecar is the customisation path. Not a fork, not a patch to the main container, not a workaround through internal functions.
+        </p>
+      </div>
+    </div>
+
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+      <span class="eyebrow" style="color:var(--blue);margin-bottom:6px;display:block;">What the sidecar handles</span>
+      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Log forwarding</strong> — stdout routed to Splunk, Elastic, or any SIEM the site uses</div>
+      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Auth enforcement</strong> — token validation against the site's own identity provider</div>
+      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Metrics export</strong> — Prometheus, Datadog, or site-specific tooling without instrumenting the app</div>
+      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Secret injection</strong> — credentials and certificates delivered at runtime, not baked into the image</div>
+      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Audit logging</strong> — request and response capture for compliance, applied uniformly</div>
+      <div class="illus" style="width:100%;height:72px;margin-top:6px;border-radius:3px;">Illustration: main container + sidecar in same pod, thin config surface</div>
+    </div>
+
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The sidecar is a Kubernetes pattern. A sidecar container runs alongside the main application container in the same
+  pod, sharing its network and storage context. It can see everything the main container produces, but the main
+  container does not need to know the sidecar exists.
+
+  Every site we deploy to has existing infrastructure we cannot control: log aggregators, SIEM systems, identity
+  providers, monitoring platforms. We do not want to replace those. We want to connect to them. The sidecar is the
+  connection point. Log routing, authentication token handling, secrets management, metrics export, audit logging —
+  all of this lives in the sidecar. The main container just writes to stdout and reads its configuration.
+
+  The sidecar exposes configuration, not code. A site fills in values: which log destination, which identity
+  provider, which secrets to mount. They do not modify behaviour. They do not access our internal functions.
+
+  In Kubernetes the sidecar can be auto-injected by the platform operator. It simply arrives alongside the main
+  container. Sites with mature platform teams can bring their own sidecar, provided it honours the same interface.
+  For everyone else we deliver a default one.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 11 — API INTEGRATION
+     Layout: Two-Column Split
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="col-left" style="background:var(--blue);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">When sidecar is insufficient</span>
+    <h2 class="section-title" style="font-size:50px;color:var(--white);margin-bottom:22px;">API Integration</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:24px;">
+      Sites connect their own systems to ours at the boundary. Their code stays theirs. Our container stays unmodified.
+    </p>
+    <div class="illus" style="width:100%;height:140px;border-radius:3px;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">
+      Illustration: container with API gateway + event pipe at boundary
+    </div>
+  </div>
+
+  <div class="col-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:22px;display:block;">Components</span>
+    <div class="ruled-item" style="border-color:var(--blue);">
+      <h4>API Gateway</h4>
+      <p>Lightweight gateway exposing the OpenAPI spec. Rate limiting, versioning and routing enforced at the boundary before any request reaches our software.</p>
+    </div>
+    <div class="ruled-item" style="border-color:var(--blue);">
+      <h4>Event Distribution</h4>
+      <p>AsyncAPI spec as the development contract. Reactive integrations for high-traffic scenarios where polling over HTTP is not appropriate.</p>
+    </div>
+    <div class="ruled-item" style="border-color:var(--blue);">
+      <h4>Identity Server</h4>
+      <p>OAuth2 token generation and validation across both REST and event interfaces. One consistent authorisation model for the entire ecosystem.</p>
+    </div>
+    <div class="ruled-item" style="border-color:var(--blue);margin-bottom:0;">
+      <h4>Admin CLI</h4>
+      <p>Site domain admins issue OAuth2 clients and manage API surface access without calling us. Strong versioning on our side means our weekly updates never break their integrations.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  When the sidecar is not enough — when a site needs to trigger actions in our software, read operational state, or
+  build their own tooling on top of our domain logic — we expose that through an API boundary.
+
+  Four components. A lightweight API gateway that enforces versioning and rate limiting. An event distribution layer
+  for reactive integrations where HTTP polling is not appropriate. An OAuth2 identity server so access is authorised
+  consistently across both interfaces. And an admin CLI so site administrators can manage their own access without
+  dependency on us.
+
+  The model is deliberately opinionated. It does not try to connect to whatever identity provider or gateway the site
+  already has. It brings its own and expects the site to integrate to ours. That is a deliberate choice: adapting to
+  every site's existing infrastructure would make variation across sites expensive to maintain.
+
+  The critical constraint is API versioning. Our updates must never break a running integration. Strong versioning
+  discipline on our side means we can ship weekly and their systems keep working.
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 12 — IMPLEMENTATION: TWO CUSTOMERS
+     Layout: Full-Width Content
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div class="accent-bar" style="background:var(--blue);"></div>
+
+  <div style="position:absolute;top:80px;left:88px;right:80px;">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:12px;display:block;">How we start</span>
+    <h2 class="section-title" style="font-size:50px;color:var(--navy);margin-bottom:20px;">Two Customers. Path of Most Resistance.</h2>
+
+    <div style="display:flex;gap:40px;">
+      <div style="flex:1;max-width:520px;">
+        <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:14px;">
+          We start with two customers — the easiest we can find, and the most difficult. The easiest validates the pipeline end to end in a real environment. The most difficult tells us where the model breaks.
+        </p>
+        <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:14px;">
+          But the selection is not purely technical. We are choosing people. At each site we need a counterpart who starts sceptical. A reluctant operator who becomes a success story carries more weight than any proof of concept.
+        </p>
+        <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;">
+          The first milestone is sidecar-only. No API, no SDK. We follow the friction. Technical friction means we build. Organisational friction means we teach. Their feedback shapes what gets built next. They are participants, not recipients.
+        </p>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:center;">
+        <div style="background:var(--gray);padding:18px 22px;border-left:5px solid var(--navy);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--navy);margin-bottom:5px;">Easiest Customer</div>
+          <p style="font-size:13px;color:var(--navy);opacity:0.8;line-height:1.5;">Validates the pipeline and sidecar model end to end. Proves the weekly delivery cadence works in a real environment.</p>
+        </div>
+        <div style="background:var(--gray);padding:18px 22px;border-left:5px solid var(--blue);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--navy);margin-bottom:5px;">Most Difficult Customer</div>
+          <p style="font-size:13px;color:var(--navy);opacity:0.8;line-height:1.5;">Finds where the model breaks. Identifies what we genuinely need to build next. Prevents over-engineering.</p>
+        </div>
+        <div style="background:var(--gray);padding:18px 22px;border-left:5px solid #bbb;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--navy);margin-bottom:5px;">Next Most Difficult</div>
+          <p style="font-size:13px;color:var(--navy);opacity:0.8;line-height:1.5;">Repeat. Build only what is proven necessary. Follow the path of most resistance, not the path of most features.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The implementation does not start with a full migration. It starts with two customers, chosen deliberately.
+
+  The easiest available and the most difficult. The easiest gives us a clean proof of concept — does the pipeline work,
+  does the sidecar cover what a site actually needs, can we deliver on a weekly cadence in a real environment?
+  The most difficult is the one that tells us what we do not yet know. Where does the model break? What did we not
+  build that we should have?
+
+  But we are also choosing the right people. At each site we want someone who starts sceptical — an integration lead
+  or site administrator who has to be convinced. When they are convinced, their story travels. Architecture diagrams
+  do not convince people. Other people do.
+
+  The first milestone is deliberately narrow. Sidecar only. We refuse to build what we have not yet proven is needed.
+  The friction we encounter is data. If the sidecar proves insufficient and API integration is genuinely needed, we
+  build it. If neither customer needs the API, we find the next most difficult customer and ask again.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 13 — INTERNAL TEAMS
+     Layout: Two-Column Split
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="col-left" style="background:var(--navy);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">Internal launch</span>
+    <h2 class="section-title" style="font-size:50px;color:var(--white);margin-bottom:22px;">Two Teams.<br>Handpicked.</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.72);line-height:1.65;margin-bottom:16px;">
+      Not staffed from a resource pool. Chosen because they are curious, technically sharp, and trusted by their peers. Being selected should feel like an opportunity.
+    </p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.58);line-height:1.65;">
+      Both teams practice first on Beumer's physical demo setup. Mistakes on the demo rig cost nothing. The same mistakes at a customer site cost credibility.
+    </p>
+  </div>
+
+  <div class="col-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:24px;display:block;">The two founding teams</span>
+    <div style="display:flex;flex-direction:column;gap:24px;max-width:600px;">
+      <div style="background:var(--gray);padding:22px 26px;border-top:5px solid var(--navy);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;color:var(--navy);margin-bottom:8px;">Sidecar Team</div>
+        <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;">Owns the integration surface. Defines what configuration a site actually needs, how thin the interface can stay while still being useful, and where the container boundary sits in practice rather than on a whiteboard.</p>
+      </div>
+      <div style="background:var(--gray);padding:22px 26px;border-top:5px solid var(--blue);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;color:var(--navy);margin-bottom:8px;">Pipeline Team</div>
+        <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;">Owns the delivery machinery. Builds the weekly cadence, wires the three scanning layers together, and proves a fresh patched container can ship on schedule without human intervention.</p>
+      </div>
+      <p style="font-size:13px;color:var(--navy);opacity:0.5;font-style:italic;line-height:1.55;border-top:1px solid #ddd;padding-top:14px;">As the model proves itself, new teams form around proven needs. An API team when required. A platform team when scale demands it. Nobody starts cold.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  Internally we start with two small teams. Not whoever is available — handpicked.
+
+  The sidecar team and the pipeline team. Chosen because they are curious, technically sharp, and respected by the
+  people around them. Being asked to join one of these teams should feel like recognition, not a rotation. These are
+  the people who will define how this model actually works in practice. Their names will be attached to what comes out.
+
+  Before they touch a live customer, both teams work on Beumer's physical demo setup. The demo environment is where
+  assumptions break safely. The sidecar team will discover their configuration surface missed something obvious.
+  The pipeline team will find their image rebuild takes longer than expected under realistic load. Those discoveries
+  on the demo rig cost nothing. The same discoveries at a customer site cost credibility.
+
+  As these teams prove the model and start delivering to the first customers, the work expands organically. An API
+  team when the sidecar genuinely is not enough. A platform team when active customer count outgrows manual oversight.
+  Each new team inherits a model already working in production. Nobody starts cold.
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 14 — UPSKILLING AND FOCUS
+     Layout: Left Panel
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="panel-left" style="background:var(--teal);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">Upskilling and focus</span>
+    <h2 class="section-title" style="font-size:48px;color:var(--white);margin-bottom:18px;">Different Work.<br>Not Less.</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.68);line-height:1.65;">
+      Neither role becomes less technical. Both become differently technical. Expertise migrates — it does not disappear.
+    </p>
+  </div>
+
+  <div class="panel-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:20px;display:block;">New focus areas by role</span>
+    <div style="display:flex;gap:36px;max-width:760px;">
+      <div style="flex:1;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--navy);border-bottom:3px solid var(--navy);padding-bottom:8px;margin-bottom:14px;">Architect</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;margin-bottom:8px;"><strong>Boundary ownership</strong> — define what the sidecar and API surface expose and what they protect</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;margin-bottom:8px;"><strong>Requirements judgement</strong> — know when to build vs. when to redirect to a simpler existing alternative</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;margin-bottom:8px;"><strong>Fitness functions</strong> — own and interpret the metrics; dependency drift and image age are architectural signals</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;"><strong>Customer translation</strong> — route site-specific needs to the right integration pattern</div>
+      </div>
+      <div style="width:1px;background:#ddd;flex-shrink:0;"></div>
+      <div style="flex:1;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--navy);border-bottom:3px solid var(--blue);padding-bottom:8px;margin-bottom:14px;">Developer</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;margin-bottom:8px;"><strong>Dockerfiles and multi-stage builds</strong> — own how the container is constructed, not just what runs inside it</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;margin-bottom:8px;"><strong>Kubernetes manifests and Helm</strong> — resource limits, health probes, deployment configuration</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;margin-bottom:8px;"><strong>Pipeline definitions</strong> — the pipeline is part of the product; developers own it alongside the code</div>
+        <div style="background:var(--gray);padding:10px 12px;font-size:13px;color:var(--navy);line-height:1.5;"><strong>Graceful shutdown and health</strong> — readiness signals and clean termination as first-class concerns</div>
+      </div>
+    </div>
+    <div style="margin-top:18px;border-top:1px solid #ddd;padding-top:12px;max-width:760px;">
+      <p style="font-size:12px;color:var(--navy);opacity:0.5;font-style:italic;line-height:1.5;">These are the standard skills of modern software delivery. The demo rig is where both roles extend into production safely for the first time.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The new model asks different things from both architects and developers. I want to be direct about what those are.
+
+  For architects: the job shifts from designing bespoke solutions per customer to owning the boundary. Their deep
+  knowledge of what individual sites need does not go away — it becomes the thing that makes them good at sidecar
+  design. Understanding which requirements genuinely need a custom integration and which can be met with configuration
+  that already exists. That judgement is the core architectural skill in this model. They also take ownership of the
+  fitness functions — not as a reporting task but as an instrument for reading the health of what they designed.
+
+  For developers: the boundary of the job expands to include the infrastructure their code ships inside. Dockerfiles,
+  Kubernetes manifests, Helm charts, pipeline definitions. These are not the platform team's responsibility handed
+  over at deployment. They are part of the product. A developer who cannot reason about how their code is built,
+  scanned, packaged and deployed is only doing half the job.
+
+  None of these skills are exotic. They are the standard toolkit of modern software delivery. The demo rig is where
+  both roles start extending into production safely.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 15 — SUPPORT MODEL / SUBSCRIPTION
+     Layout: Full-Width Content
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div class="accent-bar" style="background:var(--blue);"></div>
+
+  <div style="position:absolute;top:80px;left:88px;">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:12px;display:block;">Commercial model</span>
+    <h2 class="section-title" style="font-size:52px;color:var(--navy);margin-bottom:18px;">From Licence to Subscription</h2>
+    <p style="font-size:16px;color:var(--navy);opacity:0.82;max-width:700px;line-height:1.65;margin-bottom:32px;">
+      A flat purchase price made sense when software was delivered once. It does not make sense when we are delivering a fresh, patched container every week.
+    </p>
+  </div>
+
+  <div style="position:absolute;top:288px;left:88px;right:80px;display:flex;gap:24px;align-items:stretch;">
+    <div style="flex:1;background:var(--gray);padding:26px 22px;border-top:5px solid #bbb;">
+      <span class="eyebrow" style="color:#999;margin-bottom:10px;display:block;">Old model</span>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:#aaa;margin-bottom:10px;">One-Time Licence</div>
+      <p style="font-size:14px;color:#aaa;line-height:1.55;">Deliver a binary. Hand off responsibility. Security becomes the customer's problem after handover. Patch when asked, if at all.</p>
+    </div>
+    <div style="display:flex;align-items:center;flex-shrink:0;padding:0 8px;">
+      <span style="font-size:32px;color:var(--blue);font-weight:700;">→</span>
+    </div>
+    <div style="flex:2;background:var(--navy);padding:26px 28px;border-top:5px solid var(--blue);">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:10px;display:block;">New model</span>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--white);margin-bottom:10px;">Monthly Subscription</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;">Customers buy a continuously maintained, secure, supported system. Every week brings a new base image, updated dependency locks, and a full pipeline security pass. Some weeks that includes new features. Every week it includes a current security posture.</p>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:48px;left:88px;right:80px;border-top:1px solid #ddd;padding-top:16px;">
+    <p style="font-size:14px;color:var(--navy);opacity:0.68;line-height:1.6;">We are no longer handing off a binary and stepping back. Incidents, patches and critical CVEs are our problem to resolve on the weekly cadence — not theirs to absorb and manage alone.</p>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The commercial model has to change to match the delivery model. A flat purchase price made sense when software
+  was sold once and the customer maintained it from that point forward. It does not make sense when we are now
+  delivering a freshly patched, rebuilt container every single week.
+
+  What customers are buying under the new model is not a feature release. It is a continuously maintained security
+  posture. Every week brings a new base image from the latest patched source, updated dependency locks, and a full
+  pass through the scanning pipeline. Some weeks that includes new functionality. Every week it includes current
+  security.
+
+  This also changes the support relationship fundamentally. Under the old model we handed off a binary and stepped
+  back. Under the new model, critical CVEs and security incidents are our problem to fix on the weekly cadence.
+  We are in a continuous delivery relationship with every active customer. That is a significantly different and
+  stronger value proposition — especially in the context of the CRA.
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 16 — FITNESS FUNCTIONS
+     Layout: Data / Metrics Grid
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div class="accent-bar" style="background:var(--navy);"></div>
+
+  <div style="position:absolute;top:72px;left:88px;right:80px;">
+    <span class="eyebrow" style="color:var(--navy);margin-bottom:10px;display:block;">Architecture health</span>
+    <h2 class="section-title" style="font-size:48px;color:var(--navy);margin-bottom:4px;">Fitness Functions</h2>
+    <p style="font-size:14px;color:var(--navy);opacity:0.6;margin-bottom:22px;">Measured continuously, not audited annually. A shared language across developer and architect teams.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <div class="metric-card m-red">
+        <div class="metric-name">Dependency Age</div>
+        <div class="metric-desc">How far declared dependencies have drifted from current patched versions. Rising drift is compounding risk made visible early.</div>
+      </div>
+      <div class="metric-card m-red">
+        <div class="metric-name">Base Image Age</div>
+        <div class="metric-desc">Time since the deployed image was last rebuilt from a fresh base. A stale base image is an unpatched OS by another name.</div>
+      </div>
+      <div class="metric-card m-amber">
+        <div class="metric-name">SAST Findings</div>
+        <div class="metric-desc">Open static analysis findings by severity, tracked over time. Trend matters as much as the count at any single point.</div>
+      </div>
+      <div class="metric-card m-amber">
+        <div class="metric-name">Open Pull Requests</div>
+        <div class="metric-desc">Concurrent open PRs is a proxy for integration debt accumulating in the pipeline. A growing backlog is an early warning.</div>
+      </div>
+      <div class="metric-card m-blue">
+        <div class="metric-name">Pull Request Age</div>
+        <div class="metric-desc">How long changes are sitting unmerged and undeployed. Stale PRs mean security fixes are not reaching production.</div>
+      </div>
+      <div class="metric-card m-blue">
+        <div class="metric-name">Median PR Size</div>
+        <div class="metric-desc">Leading indicator of review quality. Median above 300 changed lines signals review culture is degrading.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1px solid #ddd;padding-top:12px;">
+      <p style="font-size:12px;color:var(--navy);opacity:0.5;font-style:italic;line-height:1.5;">These are not vanity metrics. A rising base image age is the same signal as an unpatched system — just caught earlier. When teams share these numbers they share ownership of the architecture.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The health of this architecture is measured continuously. Six metrics across three risk levels.
+
+  The two red metrics — dependency age and base image age — are the leading indicators of the compounding
+  vulnerability problem we described at the start. When these start rising, the system is drifting back toward the
+  same exposure profile the fork model created.
+
+  SAST findings and open PR count are amber. A growing backlog of static analysis findings means vulnerabilities
+  are being identified but not resolved. A growing PR count means integration debt is accumulating.
+
+  PR age and median PR size are the metrics that tell you whether engineering culture is holding. Long-lived PRs
+  mean patches are not reaching production. Large PRs mean review quality is degrading — and review is a security
+  control.
+
+  What makes these more than a dashboard is the second thing they do: they create a shared language. When developers
+  and architects reason about the same six numbers, set the same thresholds, watch the same trends, the architecture
+  becomes something teams own together rather than something imposed from above.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 17 — REGULATORY CLOCK
+     Layout: Two-Column Split
+     Orange: NO
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--white);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+
+  <div class="col-left" style="background:var(--navy);">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);margin-bottom:18px;display:block;">Regulatory context</span>
+    <h2 class="section-title" style="font-size:50px;color:var(--white);margin-bottom:22px;">The Clock<br>Is Running</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.72);line-height:1.65;">
+      The EU Cyber Resilience Act makes manufacturers legally accountable for the security posture of their software after it leaves their hands. For the first time.
+    </p>
+  </div>
+
+  <div class="col-right">
+    <span class="eyebrow" style="color:var(--blue);margin-bottom:26px;display:block;">Rollout timeline</span>
+
+    <div style="display:flex;gap:22px;align-items:flex-start;margin-bottom:24px;">
+      <div style="flex-shrink:0;width:72px;text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:38px;color:var(--navy);line-height:1.0;">2026</div>
+        <div style="font-size:10px;color:var(--navy);opacity:0.5;text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;">Now</div>
+      </div>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--navy);margin-bottom:5px;">Incident Reporting</div>
+        <p style="font-size:14px;color:var(--navy);opacity:0.8;line-height:1.55;">Manufacturers must notify authorities of severe incidents and actively exploited vulnerabilities. We must know what is running at every customer site and what its security posture is.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:22px;align-items:flex-start;margin-bottom:28px;">
+      <div style="flex-shrink:0;width:72px;text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:38px;color:var(--navy);line-height:1.0;">2027</div>
+        <div style="font-size:10px;color:var(--navy);opacity:0.5;text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;">Full application</div>
+      </div>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--navy);margin-bottom:5px;">Five-Year Mandate</div>
+        <p style="font-size:14px;color:var(--navy);opacity:0.8;line-height:1.55;">Any new software sold must ship with an active cybersecurity strategy covering five years post-acquisition. Not a compliance checkbox. A structural change to the support relationship.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--gray);padding:18px 20px;border-left:4px solid var(--navy);max-width:580px;">
+      <p style="font-size:14px;color:var(--navy);line-height:1.6;font-style:italic;">Under the fork model, a customer who forked three years ago and never merged an update is running software we have no visibility into. From 2027 the question of who is responsible becomes a legal one.</p>
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  The EU Cyber Resilience Act is not coming. It is here. We are in 2026, which means the incident reporting
+  obligation is already in force. If a severe incident affects software we manufactured and delivered, we are
+  required to notify the relevant authorities. That means we need to know what is running at every customer site
+  and what its current security posture is. Under the fork model, we do not have that visibility.
+
+  In 2027 the full act applies. Any new software sold after that date must ship with an active, documented
+  cybersecurity strategy covering the five years following acquisition. Not a form. An actual strategy with
+  a delivery model behind it.
+
+  The fork model does not just make this expensive. It makes it structurally impossible. A customer who forked
+  our software three years ago and never merged an update is running a system we cannot see, cannot update and
+  cannot report on. If that system contains an actively exploited vulnerability, the CRA makes the question of
+  who is responsible a legal one. The strategy I have described today is the answer to that question.
+  -->
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 18 — CLOSING HERO
+     Layout: Title Hero (dark)
+     Orange: YES (3 of 3)
+     ═══════════════════════════════════════════════ -->
+<div class="slide" style="background:var(--teal);">
+  <img src="logo.png" class="logo" alt="BEUMER Group">
+  <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:var(--orange);"></div>
+
+  <div style="position:absolute;top:100px;left:80px;">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);">The only defensible answer</span>
+  </div>
+
+  <div style="position:absolute;top:140px;left:80px;max-width:920px;">
+    <h2 class="display-title" style="font-size:64px;color:var(--white);margin-bottom:36px;">
+      A Weekly Cadence, Maintained by Us,<br>With Fitness Functions We Can Report Against
+    </h2>
+  </div>
+
+  <div style="position:absolute;top:420px;left:80px;max-width:740px;">
+    <p style="font-size:17px;color:rgba(255,255,255,0.72);line-height:1.7;">
+      That is the only model that gives us a defensible answer when a regulator or a customer asks: what is the current security posture of your software — and how do you know?
+    </p>
+  </div>
+
+  <div style="position:absolute;bottom:72px;left:80px;">
+    <div style="background:var(--orange);color:var(--white);font-weight:700;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;padding:11px 26px;display:inline-block;">
+      Sidecar · Pipeline · Weekly · Subscribed
+    </div>
+  </div>
+
+  <!--
+  SPEAKER NOTES:
+  I'll close with what I think is the single most important sentence in this entire strategy.
+
+  A subscription model with weekly delivery, maintained by us, with fitness functions we can report against, is not
+  just better engineering. It is the only model that gives us a defensible answer when a regulator or a customer
+  asks: what is the current security posture of your software, and how do you know?
+
+  Under the current fork model, we cannot answer that question. We do not know what is running at customer sites.
+  We do not control what gets patched or when. We cannot report on it.
+
+  Under the model I have described today, we can. Every site, every week, same pipeline, same standards,
+  same visibility.
+
+  The regulation has given us a deadline. The architecture gives us the answer. The two founding teams are where
+  we start. The demo rig is where we prove it. Thank you.
+  -->
+</div>
+
+</body>
+</html>
