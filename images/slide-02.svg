@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f0f2f5" rx="4"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#bbb" stroke-width="2" stroke-dasharray="10 5" rx="4"/>
+  <text x="400" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#999" letter-spacing="2">SLIDE 02</text>
+  <text x="400" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#aaa">Compounding vulnerability curve</text>
+  <text x="400" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#bbb">Exponential line rising over 12 months — weekly vulnerability accumulation</text>
+  <text x="400" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ccc" letter-spacing="1">420 × 510 px</text>
+</svg>

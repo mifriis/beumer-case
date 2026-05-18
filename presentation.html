@@ -239,9 +239,20 @@ body {
   line-height: 1.5;
 }
 
+@media screen {
+  body { padding: 0; gap: 0; min-height: 100vh; justify-content: center; align-items: center; background: #111; }
+  .slide { display: none; }
+  .slide.active { display: block; }
+  #nav { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); padding: 10px 20px; border-radius: 32px; z-index: 100; }
+  #nav button { background: rgba(255,255,255,0.12); border: none; color: #fff; font-family: 'Barlow', sans-serif; font-size: 18px; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+  #nav button:hover { background: rgba(255,255,255,0.28); }
+  #nav span { color: rgba(255,255,255,0.7); font-family: 'Barlow', sans-serif; font-size: 13px; letter-spacing: 0.08em; min-width: 52px; text-align: center; }
+}
+
 @media print {
   body { background: white; padding: 0; gap: 0; }
-  .slide { page-break-after: always; }
+  .slide { display: block !important; page-break-after: always; }
+  #nav { display: none; }
 }
 </style>
 </head>
@@ -278,9 +289,7 @@ body {
     </div>
   </div>
 
-  <div class="illus" style="position:absolute;right:80px;top:136px;width:390px;height:360px;border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);">
-    Illustration:<br>BEUMER airport site —<br>conveyor belts, baggage handling
-  </div>
+  <img src="images/slide-01.svg" style="position:absolute;right:80px;top:136px;width:390px;height:360px;object-fit:cover;border-radius:4px;opacity:0.9;">
 
   <!--
   SPEAKER NOTES:
@@ -326,9 +335,7 @@ body {
     </p>
   </div>
 
-  <div class="illus" style="position:absolute;right:80px;top:100px;width:420px;height:510px;border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);">
-    Illustration:<br>Compounding vulnerability curve —<br>exponential line rising over 12 months
-  </div>
+  <img src="images/slide-02.svg" style="position:absolute;right:80px;top:100px;width:420px;height:510px;object-fit:cover;border-radius:4px;opacity:0.9;">
 
   <!--
   SPEAKER NOTES:
@@ -432,19 +439,19 @@ body {
       <span class="card-badge" style="color:var(--navy);">Layer 1</span>
       <div class="card-title">Operating System</div>
       <p class="card-body">The base image everything runs on. Minimise installed tooling, use distroless builds, rebuild weekly. Scan continuously with Twistlock or Wiz.</p>
-      <div class="illus" style="width:100%;height:120px;margin-top:16px;border-radius:3px;">Illustration: minimal container stack — distroless base layer</div>
+      <img src="images/slide-04-a.svg" style="width:100%;height:120px;margin-top:16px;border-radius:3px;object-fit:cover;display:block;">
     </div>
     <div class="card c-blue">
       <span class="card-badge" style="color:var(--blue);">Layer 2</span>
       <div class="card-title">Dependencies</div>
       <p class="card-body">Third-party packages we rely on but did not write. Trusted mirrors, dependency locks, Dependabot for automated update PRs, Blackduck for scanning.</p>
-      <div class="illus" style="width:100%;height:120px;margin-top:16px;border-radius:3px;">Illustration: dependency graph / package tree</div>
+      <img src="images/slide-04-b.svg" style="width:100%;height:120px;margin-top:16px;border-radius:3px;object-fit:cover;display:block;">
     </div>
     <div class="card" style="border-top-color:#CC4400;">
       <span class="card-badge" style="color:#CC4400;">Layer 3</span>
       <div class="card-title">Source Code</div>
       <p class="card-body">The code our developers write daily. SAST with CodeQL or SonarQube. Small pull requests. Strong review culture. The OWASP Top 10 lives here.</p>
-      <div class="illus" style="width:100%;height:120px;margin-top:16px;border-radius:3px;">Illustration: SAST scan output in a pull request</div>
+      <img src="images/slide-04-c.svg" style="width:100%;height:120px;margin-top:16px;border-radius:3px;object-fit:cover;display:block;">
     </div>
   </div>
 
@@ -615,7 +622,7 @@ body {
         <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;margin-bottom:14px;">
           CodeQL and SonarQube analyse code before it merges to main. They flag dangerous patterns, highlight where best practices are missed, and create a documented record. Catch the repeatable mistakes reliably and at low cost.
         </p>
-        <div class="illus" style="width:100%;height:90px;border-radius:3px;">Illustration: SAST finding flagged in a pull request</div>
+        <img src="images/slide-07-a.svg" style="width:100%;height:90px;border-radius:3px;object-fit:cover;display:block;">
       </div>
       <div style="width:1px;background:#ddd;flex-shrink:0;"></div>
       <div style="flex:1;">
@@ -623,7 +630,7 @@ body {
         <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;margin-bottom:14px;">
           Review effectiveness degrades sharply above 300 changed lines. Above 1,000 lines a review is a formality. Keeping pull requests small is not a process preference. It is a security control.
         </p>
-        <div class="illus" style="width:100%;height:90px;border-radius:3px;">Illustration: PR size vs review quality — cliff at 300 lines</div>
+        <img src="images/slide-07-b.svg" style="width:100%;height:90px;border-radius:3px;object-fit:cover;display:block;">
       </div>
     </div>
     <div style="border-top:1px solid #ddd;padding-top:16px;max-width:740px;">
@@ -781,7 +788,7 @@ body {
       <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Metrics export</strong> — Prometheus, Datadog, or site-specific tooling without instrumenting the app</div>
       <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Secret injection</strong> — credentials and certificates delivered at runtime, not baked into the image</div>
       <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Audit logging</strong> — request and response capture for compliance, applied uniformly</div>
-      <div class="illus" style="width:100%;height:72px;margin-top:6px;border-radius:3px;">Illustration: main container + sidecar in same pod, thin config surface</div>
+      <img src="images/slide-10.svg" style="width:100%;height:72px;margin-top:6px;border-radius:3px;object-fit:cover;display:block;">
     </div>
 
   </div>
@@ -821,9 +828,7 @@ body {
     <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:24px;">
       Sites connect their own systems to ours at the boundary. Their code stays theirs. Our container stays unmodified.
     </p>
-    <div class="illus" style="width:100%;height:140px;border-radius:3px;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">
-      Illustration: container with API gateway + event pipe at boundary
-    </div>
+    <img src="images/slide-11.svg" style="width:100%;height:140px;border-radius:3px;object-fit:cover;display:block;">
   </div>
 
   <div class="col-right">
@@ -1279,6 +1284,31 @@ body {
   we start. The demo rig is where we prove it. Thank you.
   -->
 </div>
+
+<div id="nav">
+  <button onclick="move(-1)">&#8592;</button>
+  <span id="counter"></span>
+  <button onclick="move(1)">&#8594;</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let cur = 0;
+  slides[0].classList.add('active');
+  document.getElementById('counter').textContent = '1 / ' + slides.length;
+
+  function move(d) {
+    slides[cur].classList.remove('active');
+    cur = (cur + d + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    document.getElementById('counter').textContent = (cur + 1) + ' / ' + slides.length;
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') move(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   move(-1);
+  });
+</script>
 
 </body>
 </html>

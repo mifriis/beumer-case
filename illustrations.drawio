@@ -1,0 +1,179 @@
+<mxfile host="app.diagrams.net" modified="2026-05-18T00:00:00.000Z" version="21.0.0" type="device">
+
+  <!-- ═══════════════════════ BRAND PALETTE ═══════════════════════ -->
+  <diagram id="d_palette" name="Brand Palette">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="title" value="BEUMER Brand Palette" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="400" height="40" as="geometry"/></mxCell>
+        <mxCell id="sub" value="Use these exact hex values for all illustrations. 60% white · 30% navy · 10% orange." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="40" y="68" width="600" height="28" as="geometry"/></mxCell>
+
+        <mxCell id="sw_navy" value="" style="rounded=1;fillColor=#003D7A;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="40" y="120" width="180" height="100" as="geometry"/></mxCell>
+        <mxCell id="lbl_navy" value="&lt;b&gt;Dark Navy&lt;/b&gt;&lt;br&gt;#003D7A&lt;br&gt;&lt;i&gt;Trust / Authority&lt;/i&gt;&lt;br&gt;Headings, structure, text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="228" width="180" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="sw_blue" value="" style="rounded=1;fillColor=#0088CC;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="240" y="120" width="180" height="100" as="geometry"/></mxCell>
+        <mxCell id="lbl_blue" value="&lt;b&gt;Primary Blue&lt;/b&gt;&lt;br&gt;#0088CC&lt;br&gt;&lt;i&gt;Innovation / Energy&lt;/i&gt;&lt;br&gt;Accents, highlights, links" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1"><mxGeometry x="240" y="228" width="180" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="sw_orange" value="" style="rounded=1;fillColor=#FF6600;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="440" y="120" width="180" height="100" as="geometry"/></mxCell>
+        <mxCell id="lbl_orange" value="&lt;b&gt;Bright Orange&lt;/b&gt;&lt;br&gt;#FF6600&lt;br&gt;&lt;i&gt;Call-to-Action&lt;/i&gt;&lt;br&gt;Max 2–3 elements per image" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1"><mxGeometry x="440" y="228" width="180" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="sw_teal" value="" style="rounded=1;fillColor=#003D5C;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="640" y="120" width="180" height="100" as="geometry"/></mxCell>
+        <mxCell id="lbl_teal" value="&lt;b&gt;Dark Teal&lt;/b&gt;&lt;br&gt;#003D5C&lt;br&gt;&lt;i&gt;Dark backgrounds&lt;/i&gt;&lt;br&gt;Slides 1, 2, 8, 18" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1"><mxGeometry x="640" y="228" width="180" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="sw_white" value="" style="rounded=1;fillColor=#FFFFFF;strokeColor=#CCCCCC;" vertex="1" parent="1"><mxGeometry x="840" y="120" width="180" height="100" as="geometry"/></mxCell>
+        <mxCell id="lbl_white" value="&lt;b&gt;White&lt;/b&gt;&lt;br&gt;#FFFFFF&lt;br&gt;&lt;i&gt;Breathing room&lt;/i&gt;&lt;br&gt;Backgrounds, space" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1"><mxGeometry x="840" y="228" width="180" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="sw_gray" value="" style="rounded=1;fillColor=#F5F5F5;strokeColor=#CCCCCC;" vertex="1" parent="1"><mxGeometry x="1040" y="120" width="180" height="100" as="geometry"/></mxCell>
+        <mxCell id="lbl_gray" value="&lt;b&gt;Light Gray&lt;/b&gt;&lt;br&gt;#F5F5F5&lt;br&gt;&lt;i&gt;Subtle background&lt;/i&gt;&lt;br&gt;Cards, inset panels" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1040" y="228" width="180" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="rule_note" value="When exporting: File → Export as → SVG. Match filename to slide number (e.g. slide-01.svg). Drop into the images/ folder." style="text;html=1;strokeColor=none;fillColor=#F5F5F5;align=left;verticalAlign=middle;fontSize=13;spacingLeft=14;spacingRight=14;" vertex="1" parent="1"><mxGeometry x="40" y="330" width="900" height="44" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 01 ═══════════════════════ -->
+  <diagram id="d_s01" name="slide-01 · Airport Site">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-01 · BEUMER Airport Site · Export: 390 × 360 px" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="580" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="Show a BEUMER logistics site: conveyor belts, baggage handling, airport floor. Communicate scale and industrial complexity. Dark teal palette with blue highlights. No people required." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="580" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="390" height="360" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="390 × 360 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="528" width="390" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="660" y="160" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="pal_blue" value="#0088CC" style="rounded=0;fillColor=#0088CC;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="660" y="208" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="pal_teal" value="#003D5C" style="rounded=0;fillColor=#003D5C;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="660" y="256" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="pal_note" value="Slide background is Dark Teal. Illustration sits on that background — keep colours compatible." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontColor=#888888;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="660" y="310" width="200" height="60" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 02 ═══════════════════════ -->
+  <diagram id="d_s02" name="slide-02 · Vulnerability Curve">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-02 · Compounding Vulnerability Curve · Export: 420 × 510 px" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="660" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="A line chart. X-axis: months (0–12). Y-axis: cumulative known vulnerabilities. The line curves exponentially upward. A horizontal dashed threshold line at a low number labelled &quot;acceptable&quot;. Orange line, white axes, on dark teal background." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="640" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="420" height="510" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="420 × 510 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="678" width="420" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_orange" value="#FF6600" style="rounded=0;fillColor=#FF6600;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="700" y="160" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="pal_teal" value="#003D5C" style="rounded=0;fillColor=#003D5C;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="700" y="208" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="pal_white" value="#FFFFFF" style="rounded=0;fillColor=#FFFFFF;strokeColor=#CCCCCC;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="700" y="256" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="pal_note" value="Slide background is Dark Teal. Use orange for the curve line and white for axes / labels." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontColor=#888888;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="700" y="310" width="200" height="60" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 04-A ═══════════════════════ -->
+  <diagram id="d_s04a" name="slide-04-a · Distroless Container">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-04-a · Distroless Container Stack · Export: ~320 × 120 px (full card width)" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="740" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="Stacked layers diagram: top layer = App Code (navy), middle = Runtime only (blue), bottom = Minimal OS (teal). Crossed-out icons for shell/ssh/curl next to the OS layer to show what is removed. Wide and short — fits in a card." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="740" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="320" height="120" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~320 × 120 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="288" width="320" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_blue" value="#0088CC" style="rounded=0;fillColor=#0088CC;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="204" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_teal" value="#003D5C" style="rounded=0;fillColor=#003D5C;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="248" width="80" height="36" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 04-B ═══════════════════════ -->
+  <diagram id="d_s04b" name="slide-04-b · Dependency Graph">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-04-b · Dependency Graph / Package Tree · Export: ~320 × 120 px (full card width)" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="780" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="A simple tree: root node &quot;Our Code&quot; (navy) branches to 3 dependency nodes. Two nodes are green/trusted, one is amber/unknown — showing the trust differentiation that Artifactory mirrors provide. Keep it minimal, wide and short." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="780" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="320" height="120" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~320 × 120 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="288" width="320" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_blue" value="#0088CC" style="rounded=0;fillColor=#0088CC;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="204" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_gray" value="#F5F5F5" style="rounded=0;fillColor=#F5F5F5;strokeColor=#CCCCCC;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="248" width="80" height="36" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 04-C ═══════════════════════ -->
+  <diagram id="d_s04c" name="slide-04-c · SAST in PR">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-04-c · SAST Scan Output in a Pull Request · Export: ~320 × 120 px (full card width)" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="820" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="Simplified code diff view. A few lines of code (monospace style), one line highlighted in amber/red with a small icon and annotation: &quot;SQL Injection risk — line 42&quot;. Wide and short — fits in a card." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="820" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="320" height="120" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~320 × 120 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="288" width="320" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_orange" value="#FF6600" style="rounded=0;fillColor=#FF6600;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="204" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_gray" value="#F5F5F5" style="rounded=0;fillColor=#F5F5F5;strokeColor=#CCCCCC;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="248" width="80" height="36" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 07-A ═══════════════════════ -->
+  <diagram id="d_s07a" name="slide-07-a · SAST Finding in PR">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-07-a · SAST Finding Flagged in PR · Export: ~355 × 90 px (full column width)" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="780" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="An inline PR review comment from CodeQL or SonarQube. Shows a flagged line of code with a short message: &quot;Potential SQL Injection — use parameterised query&quot;. Very wide and short — almost a banner." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="780" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="355" height="90" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~355 × 90 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="258" width="355" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_orange" value="#FF6600" style="rounded=0;fillColor=#FF6600;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="204" width="80" height="36" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 07-B ═══════════════════════ -->
+  <diagram id="d_s07b" name="slide-07-b · PR Size vs Quality">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-07-b · PR Size vs Review Quality · Export: ~355 × 90 px (full column width)" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="780" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="A simple bar or line chart. X-axis: PR size in lines (0, 100, 300, 600, 1000+). Y-axis: review effectiveness (high to low). Line drops sharply at 300 lines. A vertical dashed marker at 300 labelled &quot;quality cliff&quot;. Navy bars or line, orange marker." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="780" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="355" height="90" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~355 × 90 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="258" width="355" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_orange" value="#FF6600" style="rounded=0;fillColor=#FF6600;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="204" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_blue" value="#0088CC" style="rounded=0;fillColor=#0088CC;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="248" width="80" height="36" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 10 ═══════════════════════ -->
+  <diagram id="d_s10" name="slide-10 · Container + Sidecar">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-10 · Main Container + Sidecar in Same Pod · Export: ~345 × 72 px (full column width)" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="820" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="A Kubernetes pod boundary (dashed rounded rect). Inside: two containers side by side — &quot;Main Container&quot; (navy, larger) and &quot;Sidecar&quot; (blue, smaller). A thin arrow from Sidecar outward labelled &quot;config only&quot;. Very wide, very short — almost a strip." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="820" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="345" height="72" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~345 × 72 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="240" width="345" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="450" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_blue" value="#0088CC" style="rounded=0;fillColor=#0088CC;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="450" y="204" width="80" height="36" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ═══════════════════════ SLIDE 11 ═══════════════════════ -->
+  <diagram id="d_s11" name="slide-11 · API Gateway + Event Pipe">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="hdr" value="slide-11 · Container with API Gateway + Event Pipe · Export: ~325 × 140 px" style="text;html=1;strokeColor=none;fillColor=#003D7A;fontColor=#FFFFFF;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;spacingLeft=12;" vertex="1" parent="1"><mxGeometry x="40" y="30" width="760" height="36" as="geometry"/></mxCell>
+        <mxCell id="desc" value="Our container (navy box) on the left. At its right edge: two exit points — a REST arrow (blue, labelled &quot;REST / OpenAPI&quot;) and an event stream arrow (blue, labelled &quot;Events / AsyncAPI&quot;). On the right of those: a &quot;Site Systems&quot; box (gray). Slide background is blue." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="40" y="78" width="760" height="60" as="geometry"/></mxCell>
+        <mxCell id="frame" value="" style="rounded=0;fillColor=none;strokeColor=#AAAAAA;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="325" height="140" as="geometry"/></mxCell>
+        <mxCell id="frame_lbl" value="~325 × 140 px" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#AAAAAA;" vertex="1" parent="1"><mxGeometry x="40" y="308" width="325" height="24" as="geometry"/></mxCell>
+        <mxCell id="pal_navy" value="#003D7A" style="rounded=0;fillColor=#003D7A;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="430" y="160" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_blue" value="#0088CC" style="rounded=0;fillColor=#0088CC;strokeColor=none;fontColor=#FFFFFF;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="430" y="204" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_gray" value="#F5F5F5" style="rounded=0;fillColor=#F5F5F5;strokeColor=#CCCCCC;fontSize=10;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="430" y="248" width="80" height="36" as="geometry"/></mxCell>
+        <mxCell id="pal_note" value="Slide background is Primary Blue — keep illustration compatible with that context." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontColor=#888888;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="430" y="294" width="200" height="50" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+</mxfile>
