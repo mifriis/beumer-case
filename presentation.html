@@ -640,33 +640,38 @@ body {
   <img src="logo.png" class="logo" alt="BEUMER Group">
   <div class="accent-bar" style="background:var(--navy);"></div>
 
-  <div style="position:absolute;top:80px;left:88px;right:80px;display:flex;gap:56px;">
+  <div style="position:absolute;top:80px;left:88px;right:80px;display:flex;flex-direction:column;gap:24px;">
 
-    <div style="flex:1;max-width:520px;">
-      <span class="eyebrow" style="color:var(--navy);margin-bottom:14px;display:block;">Default integration</span>
-      <h2 class="section-title" style="font-size:52px;color:var(--navy);margin-bottom:18px;">The Sidecar</h2>
-      <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:16px;">
-        A secondary container in the same Kubernetes pod. It intercepts, enriches and forwards data — logs, metrics, auth tokens — without the main container knowing or caring what happens downstream.
-      </p>
-      <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:20px;">
-        Customisation lives in the sidecar. The main codebase stays on the trunk and on the weekly cadence.
-      </p>
-      <div style="border-left:4px solid var(--navy);padding-left:14px;">
-        <p style="font-size:13px;color:var(--navy);opacity:0.65;line-height:1.6;font-style:italic;">
-          It is critical and non-negotiable that the sidecar is the customisation path. Not a fork, not a patch to the main container, not a workaround through internal functions.
+    <div style="display:flex;gap:56px;">
+
+      <div style="flex:1;max-width:520px;">
+        <span class="eyebrow" style="color:var(--navy);margin-bottom:14px;display:block;">Default integration</span>
+        <h2 class="section-title" style="font-size:52px;color:var(--navy);margin-bottom:18px;">The Sidecar</h2>
+        <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:16px;">
+          A secondary container in the same Kubernetes pod. It intercepts, enriches and forwards data — logs, metrics, auth tokens — without the main container knowing or caring what happens downstream.
         </p>
+        <p style="font-size:15px;color:var(--navy);opacity:0.85;line-height:1.65;margin-bottom:20px;">
+          Customisation lives in the sidecar. The main codebase stays on the trunk and on the weekly cadence.
+        </p>
+        <div style="border-left:4px solid var(--navy);padding-left:14px;">
+          <p style="font-size:13px;color:var(--navy);opacity:0.65;line-height:1.6;font-style:italic;">
+            It is critical and non-negotiable that the sidecar is the customisation path. Not a fork, not a patch to the main container, not a workaround through internal functions.
+          </p>
+        </div>
       </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+        <span class="eyebrow" style="color:var(--blue);margin-bottom:6px;display:block;">What the sidecar handles</span>
+        <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Log forwarding</strong> — stdout routed to Splunk, Elastic, or any SIEM the site uses</div>
+        <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Auth enforcement</strong> — token validation against the site's own identity provider</div>
+        <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Metrics export</strong> — Prometheus, Datadog, or site-specific tooling without instrumenting the app</div>
+        <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Secret injection</strong> — credentials and certificates delivered at runtime, not baked into the image</div>
+        <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Audit logging</strong> — request and response capture for compliance, applied uniformly</div>
+      </div>
+
     </div>
 
-    <div style="flex:1;display:flex;flex-direction:column;gap:10px;justify-content:center;">
-      <span class="eyebrow" style="color:var(--blue);margin-bottom:6px;display:block;">What the sidecar handles</span>
-      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Log forwarding</strong> — stdout routed to Splunk, Elastic, or any SIEM the site uses</div>
-      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Auth enforcement</strong> — token validation against the site's own identity provider</div>
-      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Metrics export</strong> — Prometheus, Datadog, or site-specific tooling without instrumenting the app</div>
-      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Secret injection</strong> — credentials and certificates delivered at runtime, not baked into the image</div>
-      <div style="background:var(--gray);padding:10px 14px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);"><strong>Audit logging</strong> — request and response capture for compliance, applied uniformly</div>
-      <img src="images/slide-10.svg" style="width:100%;height:72px;margin-top:6px;border-radius:3px;object-fit:cover;display:block;">
-    </div>
+    <img src="images/slide-10.svg" style="width:100%;height:auto;display:block;border-radius:3px;">
 
   </div>
 

@@ -21,17 +21,6 @@
 
 ---
 
-### 2. Assumptions — Full-Width Content
-**Layout:** Full-Width Content (white, blue accent bar)
-**Title:** "Stated Assumptions"
-**4 columns:**
-- Platform — sites can run Kubernetes
-- Commercial Appetite — customers willing to move to subscription
-- Internal Capacity — ring-fence a small team from project delivery
-- Demo Environment — physical demo setup available for pre-production validation
-
----
-
 ### 3. The Cost of Inaction — Stat Hero (dark)
 **Layout:** Stat / Quote Hero (dark teal)
 **Large stat:** 500+ (orange)
