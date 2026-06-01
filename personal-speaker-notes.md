@@ -60,12 +60,13 @@ Sikkerhedsrisiko i software eksisterer på tværs af tre adskilte lag og alle tr
 Ingen af dem kan erstatte de andre, og en svaghed i ét lag skaber en vej ind i det næste.
 
 Første lag er operativsystemet — det base image containeren er bygget på. 
-Her kan man minimére hvad der er i image'et, adskil build- og runtime-images, rebuild på et ugentligt cadence, scan kørende images løbende.
+Her kan man minimére hvad der er i image'et, adskil build- og runtime-images, rebuild på et ugentligt kadence, scan kørende images løbende.
 
 Andet lag er dependencies — de tredjepartspakker og biblioteker vores kode er afhængig af. Supply chain-angreb og package takeovers er nu regelmæssige begivenheder på tværs af NPM, PyPI, NuGet og Maven. 
 Her kan man sætte ind med trusted mirrors, version locks ved build-tid, automatiseret opdateringsværktøj, SCA scanning.
 
 Tredje lag er source code — hvad vores udviklere skriver. Her lever OWASP Top 10. SQL injection, dårlig authentication, usikre objekt referencer. 
+
 Her er vi nød til at sætte ind med godt håndværk krydret med SAST-værktøj og en god review-kultur bygget omkring små pull requests. 
 
 Lad os lige dykke ned i hvert lag individuelt
@@ -77,11 +78,17 @@ Lad os lige dykke ned i hvert lag individuelt
 For en moderne softwarevirksomhed er OS ikke noget der installeres på en server. Det er det base image containeren bygges på og deployes fra. Og base images er ikke ens. Et standard Linux base image leveres
 med apt-get, curl, SSH — værktøjer en angriber kan bruge til at installere software, kontakte en ekstern server eller åbne en shell.
 
-Løsningen er at minimere. Distroless eller hardened minimale base images indeholder kun det runtime-applikationen har brug for. Intet andet. Virksomheder som Chainguard har bygget en forretning på at levere disse.
+Løsningen er at minimere. Distroless eller hærdede minimale base images indeholder kun det runtime-applikationen har brug for. Intet andet. Virksomheder som Chainguard har bygget en forretning på at levere disse.
 
-Multi-stage builds sikrer at de værktøjer man har brug for til at kompilere og teste software aldrig ender i det endelige runtime image. Build-containeren har alt. Production-containeren har næsten ingenting.
+Multi-stage builds sikrer at de værktøjer man har brug for til at kompilere og teste software aldrig ender i det endelige runtime image. 
 
-Og så rebuilder vi. Hver uge. Uanset om der er nye features. Base image age-metrikken er det der fortæller os hvornår det cadence er ved at glide, inden det bliver et problem.
+Build-containeren har alt. Production-containeren har næsten ingenting.
+
+Og så rebuilder vi. 
+
+Hver uge. 
+
+Uanset om der er nye features. Base image age-metrikken er det der fortæller os hvornår det kadence er ved at glide, inden det bliver et problem.
 
 ---
 
@@ -91,12 +98,15 @@ Andet lag er den kode vi er afhængige af men ikke selv har skrevet. Ethvert pro
 det hverken er produktivt eller mere sikkert at bygge alt fra bunden.
 
 Risikoen er at vi ikke kan auditere dem alle. Supply chain-angreb — hvor ondsindet kode merged diskret ind i en tidligere pålidelig pakke — er nu en regelmæssig begivenhed. 
-Log4Shell ramte millioner af systemer fordi et udbredt logging-bibliotek indeholdt en kritisk fejl der var gået ubemærket hen.
+
+Vi så også Log4Shell for et par år siden ramme millioner af systemer fordi et udbredt logging-bibliotek indeholdt en kritisk fejl der var gået ubemærket hen.
+
+for at sætte ind i dette lag vil vi implementere
 
 * trusted mirrors der filtrerer hvad der overhovedet kan indgå i vores builds; 
 * version locks så et build er deterministisk og ingen uventet ændring snigler sig ind mellem kørsler; 
 * Dependabot så opdateringer sker rutinemæssigt frem for i en krise; 
-* og SCA scanning med Blackduck så vi har synlighed over hvilke sårbarheder der allerede befinder sig i vores dependency tree. 
+* og Software Composition Analysis scanning med Blackduck eller lign. så vi har synlighed over hvilke sårbarheder der allerede befinder sig i vores dependency tree. 
 
 Målet er at holde dependency drift lille og synlig.
 
@@ -113,21 +123,22 @@ under pres, kompleksitet og mental overload i det daglige udviklingsarbejde.
 
 To praksisser udgør fundamentet. 
 
-* SAST — værktøjer som CodeQL og SonarQube — analyserer kode inden den merges. Det fanger de gentagelige, mønsterbaserede fejl et værktøj kan genkende. Ikke alt. Men en masse, pålideligt og pris effektivt
+* Static Application Security Testing — værktøjer som CodeQL og SonarQube — analyserer kode inden den merges. Det fanger de gentagelige, mønsterbaserede fejl et værktøj kan genkende. Ikke alt. Men en masse, pålideligt og pris effektivt
 * Den anden praksis er code review, og der er specifik forskning der er værd at kende. 
     Review-kvaliteten falder markant efterhånden som pull request-størrelsen vokser. Over 300 ændrede linjer begynder reviewere at miste tråden. 
-    Over 1.000 linjer er et review stort set en formalitet. At holde PRs små er derfor ikke bare god ingeniørhygiejne. Det er en sikkerhedskontrol. 
+    Over 1.000 linjer er et review stort set en formalitet. At holde PRs små er derfor ikke bare god ingeniørhygiejne. Det er en sikkerhedskontrol.
+  
     Man har brug for begge praksisser. Ingen af dem er tilstrækkelig alene.
 
 ---
 
 ## Slide 8 — En Ren Container Er Værdiløs Hvis Den Aldrig Når Production
 
-Vi har dækket hvordan vi sikrer det vi bygger. Tre lag, løbende scanning, et ugentligt cadence fra et friske base image. 
+Vi har dækket hvordan vi sikrer det vi bygger. Tre lag, løbende scanning, et ugentligt kadence fra et friske base image. 
 
 Men intet af det betyder noget hvis softwaren ikke kan nå kunden.
 
-Under den nuværende model kræver det at nå kunden en code merge. Det er den flaskehals der gør det ugentlige cadence umuligt. Så den anden halvdel af denne strategi handler om at erstatte fork-modellen
+Under den nuværende model kræver det at nå kunden en code merge. Det er den flaskehals der gør det ugentlige kadence umuligt. Så den anden halvdel af denne strategi handler om at erstatte fork-modellen
 med en integrationsarkitektur der lader os imødekomme kundebehov uden nogensinde at modificere core-containeren.
 
 ---
@@ -137,7 +148,7 @@ med en integrationsarkitektur der lader os imødekomme kundebehov uden nogensind
 Tre integrationsmønstre. Vi starter med det simpleste og bevæger os kun videre til det næste når det foregående reelt ikke kan løse problemet.
 
 Sidecar er standarden. Den håndterer de operationelle hensyn der varierer pr. site — log routing, auth tokens, secrets injection, metrics export — uden at røre main-containeren overhovedet.
-Main-containeren forbliver generisk, umodificeret og på det ugentlige delivery cadence.
+Main-containeren forbliver generisk, umodificeret og på det ugentlige delivery kadence.
 
 API'en er den anden mulighed. Når et site har brug for dybere integration — at udløse events, læse tilstand, bygge egne værktøjer oven på vores domænelogik — eksponerer vi det gennem en versioneret
 API-grænse. De bygger på deres side. Vi bygger på vores. Vores opdateringer bryder ikke deres integrationer.
@@ -192,7 +203,7 @@ Implementeringen starter ikke med en fuld migration. Den starter med to kunder, 
 
 Den nemmeste og den sværeste.
 
-* Den nemmeste giver os et rent proof of concept — virker pipelinen, dækker sidecar'en hvad et site faktisk har brug for, kan vi levere på et ugentligt cadence i et rigtigt miljø? 
+* Den nemmeste giver os et rent proof of concept — virker pipelinen, dækker sidecar'en hvad et site faktisk har brug for, kan vi levere på et ugentligt kadence i et rigtigt miljø? 
 * Den sværeste er den der fortæller os hvad vi endnu ikke ved. Hvor bryder modellen sammen? Hvad byggede vi ikke som vi burde have?
 
 Men vi vælger også de rigtige mennesker. På hvert site vil vi have én der starter skeptisk — en integration lead eller site-administrator der skal overbevises. 
@@ -267,7 +278,7 @@ Hver uge bringer vi et nyt base image fra den seneste patchede kilde, opdaterede
 Nogle uger inkluderer det ny funktionalitet. Men hver uge inkluderer det en reaktion til det aktive trusselsbillede
 
 Det ændrer også supportrelationen fundamentalt. 
-Under den gamle model overdrog vi en binary og trådte tilbage. Under den nye model er kritiske CVEs og sikkerhedshændelser vores problem at løse på det ugentlige cadence. 
+Under den gamle model overdrog vi en binary og trådte tilbage. Under den nye model er kritiske CVEs og sikkerhedshændelser vores problem at løse på det ugentlige kadence. 
 Vi er i et continuous delivery-forhold med hver aktiv kunde.
 Det er et markant anderledes og stærkere produkt — særligt i konteksten af CRA.
 
@@ -288,7 +299,7 @@ Langlivede PRs betyder at patches ikke når production.
 Store PRs betyder at kvaliteten af reviews forringes — og review er en sikkerhedskontrol.
 
 Det er mere end et dashboard, det er et fælles sprog mellem ledelse, arkitekter og udviklere. Når vi sammen tænker i de samme tal og er enige om tærsker så bliver arkitekturen noget teams ejer sammen frem for noget der pålægges oppe fra og ned.
-'
+
 ---
 
 ## Slide 17 — Uret Kører
