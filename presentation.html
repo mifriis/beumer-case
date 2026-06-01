@@ -404,19 +404,19 @@ body {
       <span class="card-badge" style="color:var(--navy);">Layer 1</span>
       <div class="card-title">Operating System</div>
       <p class="card-body">The base image everything runs on. Minimise installed tooling, use distroless builds, rebuild weekly. Scan continuously with Twistlock or Wiz.</p>
-      <img src="images/slide-04-a.svg" style="width:100%;height:120px;margin-top:16px;border-radius:3px;object-fit:cover;display:block;">
+      <img src="images/operatingsystem.svg" style="width:50%;height:auto;margin-top:16px;display:block;margin-left:auto;margin-right:auto;">
     </div>
     <div class="card c-blue">
       <span class="card-badge" style="color:var(--blue);">Layer 2</span>
       <div class="card-title">Dependencies</div>
       <p class="card-body">Third-party packages we rely on but did not write. Trusted mirrors, dependency locks, Dependabot for automated update PRs, Blackduck for scanning.</p>
-      <img src="images/slide-04-b.svg" style="width:100%;height:120px;margin-top:16px;border-radius:3px;object-fit:cover;display:block;">
+      <img src="images/dependencies.svg" style="width:50%;height:auto;margin-top:16px;display:block;margin-left:auto;margin-right:auto;">
     </div>
     <div class="card" style="border-top-color:#CC4400;">
       <span class="card-badge" style="color:#CC4400;">Layer 3</span>
       <div class="card-title">Source Code</div>
       <p class="card-body">The code our developers write daily. SAST with CodeQL or SonarQube. Small pull requests. Strong review culture. The OWASP Top 10 lives here.</p>
-      <img src="images/slide-04-c.svg" style="width:100%;height:120px;margin-top:16px;border-radius:3px;object-fit:cover;display:block;">
+      <img src="images/sourcecode.svg" style="width:50%;height:auto;margin-top:16px;display:block;margin-left:auto;margin-right:auto;">
     </div>
   </div>
 
@@ -536,20 +536,20 @@ body {
   <div class="panel-right">
     <span class="eyebrow" style="color:var(--blue);margin-bottom:22px;display:block;">Controls</span>
     <div style="display:flex;gap:36px;max-width:740px;margin-bottom:24px;">
-      <div style="flex:1;">
+      <div style="flex:1;display:flex;flex-direction:column;">
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:10px;">SAST</h3>
         <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;margin-bottom:14px;">
           CodeQL and SonarQube analyse code before it merges to main. They flag dangerous patterns, highlight where best practices are missed, and create a documented record. Catch the repeatable mistakes reliably and at low cost.
         </p>
-        <img src="images/slide-07-a.svg" style="width:100%;height:90px;border-radius:3px;object-fit:cover;display:block;">
+        <img src="images/sast.svg" style="width:75%;height:auto;display:block;margin-left:auto;margin-right:auto;margin-top:auto;">
       </div>
       <div style="width:1px;background:#ddd;flex-shrink:0;"></div>
-      <div style="flex:1;">
+      <div style="flex:1;display:flex;flex-direction:column;">
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:10px;">Code Review</h3>
         <p style="font-size:14px;color:var(--navy);opacity:0.82;line-height:1.6;margin-bottom:14px;">
           Review effectiveness degrades sharply above 300 changed lines. Above 1,000 lines a review is a formality. Keeping pull requests small is not a process preference. It is a security control.
         </p>
-        <img src="images/slide-07-b.svg" style="width:100%;height:90px;border-radius:3px;object-fit:cover;display:block;">
+        <img src="images/review.svg" style="width:75%;height:auto;display:block;margin-left:auto;margin-right:auto;margin-top:auto;">
       </div>
     </div>
     <div style="border-top:1px solid #ddd;padding-top:16px;max-width:740px;">
