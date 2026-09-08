@@ -5,10 +5,7 @@ A software architecture strategy presentation for BEUMER Group, covering continu
 ## How This Was Made
 
 ### 1. Writing the case
-Starting from the case description, the content was written as long-form prose in `case-raw.md` — covering the compounding vulnerability problem, three security layers, the fork model's structural flaws, integration patterns, implementation strategy, upskilling, support model, architectural constraints, and the regulatory timeline.
-
-### 2. Collaborating on the outline
-The raw content was refined iteratively: change management was woven into the implementation strategy rather than called out as a separate section, the internal team formation narrative was added, and an upskilling section was split out. The result was reviewed against the original case description to identify gaps.
+Starting from the case description, the content was written as long-form prose in `case.md` — covering the compounding vulnerability problem, three security layers, the fork model's structural flaws, integration patterns, implementation strategy, upskilling, support model, architectural constraints, and the regulatory timeline.
 
 ### 3. Defining the design system
 A design guideline was written as a prompt (`updated-design.md`) specifying the BEUMER brand palette, typography, layout templates, spacing rules, and speaker note conventions — detailed enough to fully drive generation without ambiguity.
@@ -26,7 +23,7 @@ Using the same design guideline, `illustrations.drawio` was generated with the f
 | File | Purpose |
 |---|---|
 | `case-description.md` | Original case brief |
-| `case-raw.md` | Full strategy content in prose |
+| `case.md` | Full strategy content in prose |
 | `presentation-outline.md` | Slide-by-slide plan |
 | `updated-design.md` | Design system prompt / guideline |
 | `presentation.html` | Final self-contained presentation |
